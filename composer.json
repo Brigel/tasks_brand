@@ -2,7 +2,7 @@
     "name": "brigel/module-tasks_brand",
     "description": "Tasks Brand module",
     "type": "magento2-module",
-    "version" : "1.4",
+    "version" : "v1.5",
     "extra": {
         "map": [
             [
