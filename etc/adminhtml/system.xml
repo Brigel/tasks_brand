@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magecom
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to info@magecom.net so we can send you a copy immediately.
+ *
+ * @category Magecom
+ * @package Magecom_Module
+ * @copyright Copyright (c) 2017 Magecom, Inc. (http://www.magecom.net)
+ * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="metaconfig" translate="label" sortOrder="10">
+            <label>Meta data config</label>
+        </tab>
+        <section id="brands" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Brands</label>
+            <tab>metaconfig</tab>
+            <resource>Tasks_Brand::brand_configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Meta tags configuration</label>
+                <field id="meta_title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Meta title</label>
+                    <comment>Meta data of title on the page</comment>
+                </field>
+                <field id="meta_description" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Meta description</label>
+                    <comment>Meta data of description on the page</comment>
+                </field>
+                <field id="meta_keywords" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Meta keywords</label>
+                    <comment>Meta data of keywords on the page</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
