@@ -3,6 +3,7 @@
     "description": "Tasks Brand module",
     "type": "magento2-module",
     "version" : "v1.7",
+    "license": "MIT",
     "extra": {
         "map": [
             [
