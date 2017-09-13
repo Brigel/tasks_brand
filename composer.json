@@ -2,6 +2,14 @@
     "name": "tasks/module-brand",
     "description": "Tasks Brand module",
     "type": "magento2-module",
-    "version" : "v2.4",
-    "license": "MIT"
+    "version" : "v2.5",
+    "license": "MIT",
+    "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Tasks\\Brand\\": ""
+                }
+            }
 }
