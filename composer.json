@@ -3,13 +3,5 @@
     "description": "Tasks Brand module",
     "type": "magento2-module",
     "version" : "v2.2",
-    "license": "MIT",
-    "extra": {
-         "map": [
-            [
-                "*",
-                "Tasks/Brand"
-            ]
-        ]
-    }
+    "license": "MIT"
 }
