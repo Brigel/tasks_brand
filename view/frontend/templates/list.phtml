@@ -29,8 +29,8 @@ $products = $block->getProductsByCurrentBrand();
  */
 foreach ($products as $product) {
 ?>
-<li><a href="/catalog/product/view/id/<?=$product->getId() ?>">
-        <?= $product->getName().$product->getData('sku') ?>
+<li><a href="<?php echo $product->getProductUrl() ?>">
+        <?php echo  $product->getName().$product->getData('sku') ?>
     </a></li>
 <?php
 }

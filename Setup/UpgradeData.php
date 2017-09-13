@@ -39,13 +39,19 @@ class UpgradeData implements UpgradeDataInterface
     private $eavSetupFactory;
 
     /**
+     * @var \Tasks\Brand\Model\BrandFactory
+     */
+    protected $brandFactory;
+
+    /**
      * UpgradeData constructor.
      * @param \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
      */
     public function __construct(
+        \Tasks\Brand\Model\BrandFactory $brandFactory,
         \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
-    )
-    {
+    ) {
+        $this->brandFactory = $brandFactory;
         $this->eavSetupFactory = $eavSetupFactory;
     }
 
@@ -56,9 +62,46 @@ class UpgradeData implements UpgradeDataInterface
          * Upgrading schema before upgrade Data
          */
         $this->upgradeSchema($setup);
+        if (version_compare($context->getVersion(), '0.0.2', '<')) {
+            /** @var \Tasks\Brand\Model\Brand $brand */
+            $brand = $this->brandFactory->create();
+            $data = $this->getDefaultData();
 
+            foreach ($data as $item) {
+                foreach ($item as $fieldName => $value) {
+                    $brand->setData($fieldName, $value);
+                }
+                $brand->save();
+                $brand->unsetData();
+            }
+        }
 
         $setup->endSetup();
+    }
+
+    /**
+     * @return array
+     */
+    private function getDefaultData()
+    {
+        $defaultPicture = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/file-picture-icon.png';
+        $data = [
+            [
+                'name' => 'Guchini',
+                'status' => \Tasks\Brand\Model\Config\Status::STATUS_ENABLED,
+                'description' => 'Super guchini brand!',
+                'url_pic' => $defaultPicture,
+                'url_key' => 'gucha'
+            ],
+            [
+                'name' => 'Armanini',
+                'status' => \Tasks\Brand\Model\Config\Status::STATUS_ENABLED,
+                'description' => 'Super armanini brand!',
+                'url_pic' => $defaultPicture,
+                'url_key' => 'arma'
+            ],
+        ];
+        return $data;
     }
 
     /**

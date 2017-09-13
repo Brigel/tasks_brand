@@ -48,7 +48,6 @@ class ListBrand extends \Magento\Framework\View\Element\Template
         array $data = []
     ) {
         $this->_brandCollection = $_brandCollection;
-        $this->_brandCollection->addAttributeToSelect('*');
         parent::__construct($context, $data);
     }
 
@@ -56,6 +55,7 @@ class ListBrand extends \Magento\Framework\View\Element\Template
     public function getBrands()
     {
         if (!$this->_brands) {
+            $this->_brandCollection->addAttributeToSelect('*');
             $this->_brands = $this->_brandCollection->getItems();
         }
         return $this->_brands;

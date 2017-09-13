@@ -42,7 +42,6 @@ class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
     )
     {
         $collection = $collectionFactory->create();
-        $collection->addAttributeToSelect('*');
         $this->brandCollection = $collection;
     }
 
@@ -56,9 +55,7 @@ class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
         $items = $this->brandCollection->exportToArray();
         $result = [];
         foreach ($items as $item) {
-            $result += [
-                $item["entity_id"] => __($item['name'])
-            ];
+            $result[$item["entity_id"]] = __($item['name']);
         }
         return $result;
     }
@@ -72,7 +69,7 @@ class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
     {
         $result = [];
 
-        foreach (self::getOptionArray() as $index => $value) {
+        foreach ($this->getOptionArray() as $index => $value) {
             $result[] = ['value' => $index, 'label' => $value];
         }
 
@@ -87,7 +84,7 @@ class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
      */
     public function getOptionText($optionId)
     {
-        $options = self::getOptionArray();
+        $options = $this->getOptionArray();
 
         return isset($options[$optionId]) ? $options[$optionId] : null;
     }

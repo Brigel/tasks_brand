@@ -65,7 +65,7 @@ class BrandSetup extends EavSetup
                         'sort_order' => 1,
                         'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
                     ],
-                    'url_pic' => [
+                    'logo' => [
                         'type' => 'varchar',
                         'label' => 'Brand Logo',
                         'input' => 'text',

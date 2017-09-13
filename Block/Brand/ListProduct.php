@@ -30,16 +30,34 @@ use Magento\Framework\View\Element\Template;
 class ListProduct extends Template
 {
     /**
-     * @var \Magento\Framework\View\Result\PageFactory
+     * @var \Magento\Catalog\Model\ResourceModel\Product\Collection
      */
     protected $_productCollection;
 
+    /**
+     * @var \Tasks\Brand\Helper\Data
+     */
     protected $_brandConfig;
 
+    /**
+     * @var \Magento\Framework\Registry
+     */
     protected $_coreRegistry;
 
+    /**
+     * @var \Magento\Framework\View\Page\Config
+     */
     protected $_pageConfig;
 
+    /**
+     * ListProduct constructor.
+     * @param Template\Context $context
+     * @param \Magento\Catalog\Model\ResourceModel\Product\Collection $productCollection
+     * @param \Tasks\Brand\Helper\Data $brandConfig
+     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Framework\View\Page\Config $pageConfig
+     * @param array $data
+     */
     public function __construct(
         Template\Context $context,
         \Magento\Catalog\Model\ResourceModel\Product\Collection $productCollection,
@@ -60,20 +78,13 @@ class ListProduct extends Template
     {
         $brand = $this->_coreRegistry->registry('current_brand');
 
-        $meta_title = $brand->getData('meta_title')? $brand->getData('meta_title')
-            :$this->_brandConfig->getGeneralConfig('meta_title');
+        $metaTitle = $brand->getMetaTitle() ?: $this->_brandConfig->getDefaultMetaTitle();
+        $metaDescription = $brand->getMetaDescription() ?: $this->_brandConfig->getDefaultMetaDescription();
+        $metaKeywords = $brand->getMetaKeywords() ?: $this->_brandConfig->getDefaultMetaKeywords() ;
 
-        $meta_description = $brand->getData('meta_description')? $brand->getData('meta_description')
-            :$this->_brandConfig->getGeneralConfig('meta_description');
-
-        $meta_keywords = $brand->getData('meta_keywords')? $brand->getData('meta_keywords')
-            :$this->_brandConfig->getGeneralConfig('meta_keywords');
-
-        $this->_pageConfig->getTitle()->set($meta_title);
-
-        $this->_pageConfig->setKeywords($meta_description);
-
-        $this->_pageConfig->setDescription($meta_keywords);
+        $this->_pageConfig->getTitle()->set($metaTitle);
+        $this->_pageConfig->setKeywords($metaDescription);
+        $this->_pageConfig->setDescription($metaKeywords);
 
         $pageMainTitle = $this->getLayout()->getBlock('page.main.title');
         if ($pageMainTitle) {

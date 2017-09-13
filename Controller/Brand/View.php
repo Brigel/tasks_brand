@@ -77,9 +77,11 @@ class View extends \Magento\Framework\App\Action\Action
     protected function _initBrand()
     {
         $brandId = $this->_request->getParam('brand');
-        if(!$brandId){
-            throw new \Exception('Brand id is null');
+
+        if (!is_numeric($brandId) && !($brandId > 0)) {
+            throw new \Exception('Param "brand" not correct value');
         }
+
         $brand = $this->_brandFactory->create();
         $brand->load($brandId);
         $this->_coreRegistry->register('current_brand', $brand);

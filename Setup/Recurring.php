@@ -35,7 +35,7 @@ class Recurring implements InstallSchemaInterface {
     public function __construct(
         \Tasks\Brand\Model\BrandFactory $brandFactory,
         BrandSetupFactory $brandSetupFactory,
-        \Magento\Eav\Model\ResourceModel\Entity\Attribute\Collection $collection
+        \Magento\Eav\Model\ResourceModel\Entity\Attribute $collection
     )
     {
         $this->collection = $collection;
@@ -45,9 +45,23 @@ class Recurring implements InstallSchemaInterface {
 
 
     public function install( SchemaSetupInterface $setup, ModuleContextInterface $context ) {
-//        $this->logger->debug('RECURRING IS USE  INSTALL METHOD!!!!!!!!!!');
+        $brandSetup = $this->brandSetupFactory->create();
+        $attrBrand = $brandSetup->getAttribute(\Magento\Catalog\Model\Product::ENTITY, 'brand');
 
-        $asd = "123";
+        if(empty($attrBrand))
+        {
+            $brandSetup->addAttribute(
+                \Magento\Catalog\Model\Product::ENTITY,
+                'brand',
+                [
+                    'type' => 'int',
+                    'label' => 'Brand',
+                    'input' => 'select',
+                    'source' => 'Tasks\Brand\Model\Config\BrandSource',
+                    'default' => 1,
+                ]
+            );
+        }
 
     }
 }

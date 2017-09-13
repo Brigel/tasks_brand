@@ -71,46 +71,10 @@ class InstallData implements InstallDataInterface
          */
         $this->installEntities($setup);
 
-        /** @var \Tasks\Brand\Model\Brand $brand */
-        $brand = $this->brandFactory->create();
-
-        $data = $this->getDefaultData();
-
-        foreach ($data as $item) {
-            foreach ($item as $fieldName => $value) {
-                $brand->setData($fieldName, $value);
-            }
-            $brand->save();
-            $brand->unsetData();
-        }
-
         $setup->endSetup();
     }
 
-    /**
-     * @return array
-     */
-    private function getDefaultData()
-    {
-        $defaultPicture = 'http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/file-picture-icon.png';
-        $data = [
-            [
-                'name' => 'Guchini',
-                'status' => \Tasks\Brand\Model\Config\Status::STATUS_ENABLED,
-                'description' => 'Super guchini brand!',
-                'url_pic' => $defaultPicture,
-                'url_key' => 'gucha'
-            ],
-            [
-                'name' => 'Armanini',
-                'status' => \Tasks\Brand\Model\Config\Status::STATUS_ENABLED,
-                'description' => 'Super armanini brand!',
-                'url_pic' => $defaultPicture,
-                'url_key' => 'arma'
-            ],
-        ];
-        return $data;
-    }
+
 
     /**
      * @param ModuleDataSetupInterface $setup

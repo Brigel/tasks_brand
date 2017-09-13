@@ -30,6 +30,45 @@ class Brand extends AbstractModel
 {
     const ENTITY = 'tasks_brand';
 
+    /**
+     * @var \Magento\Framework\App\ResourceConnection
+     */
+    private $resourceConnection;
+
+//    /**
+//     * Brand constructor.
+//     * @param \Magento\Framework\Model\Context $context
+//     * @param \Magento\Framework\Registry $registry
+//     * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
+//     * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
+//     * @param \Magento\Framework\App\ResourceConnection $resourceConnection
+//     * @param array $data
+//     */
+//    public function __construct(
+//        \Magento\Framework\Model\Context $context,
+//        \Magento\Framework\Registry $registry,
+//        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+//        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+//        \Magento\Framework\App\ResourceConnection $resourceConnection,
+//        array $data = []
+//    ) {
+//        $this->resourceConnection = $resourceConnection;
+//        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+//    }
+
+    public function __construct(
+        \Magento\Framework\Model\Context $context,
+        \Magento\Framework\Registry $registry,
+        \Magento\Framework\App\ResourceConnection $resourceConnection,
+        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        array $data = []
+    )
+    {
+        $this->resourceConnection = $resourceConnection;
+        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
+    }
+
     protected function _construct(
     ) {
         $this->_init('Tasks\Brand\Model\ResourceModel\Brand');
@@ -52,7 +91,6 @@ class Brand extends AbstractModel
     {
         $brand =
             $this->getCollection()
-                ->addFieldToSelect('entity_id')
                 ->addFieldToFilter('url_key', ['eq' => $urlKey])
                 ->getFirstItem();
         return $brand->getId();

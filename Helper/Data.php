@@ -84,5 +84,20 @@ class Data extends AbstractHelper
         return $this->getConfigValue(self::XML_PATH_TO_CONFIG . $code);
     }
 
+    public function getDefaultMetaTitle()
+    {
+        return $this->getGeneralConfig('meta_title');
+    }
+
+    public function getDefaultMetaKeywords()
+    {
+        return $this->getGeneralConfig('meta_keywords');
+    }
+
+    public function getDefaultMetaDescription()
+    {
+        return $this->getGeneralConfig('meta_description');
+    }
+
 
 }

@@ -60,7 +60,8 @@ abstract class Brand extends \Magento\Backend\App\Action
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\Action\Context $context
-    ) {
+    )
+    {
         $this->_brandFactory = $brandFactory;
         $this->_coreRegistry = $coreRegistry;
         $this->_resultRedirectFactory = $resultRedirectFactory;
@@ -68,20 +69,21 @@ abstract class Brand extends \Magento\Backend\App\Action
     }
 
     /**
-     * Init Item
-     *
      * @return \Tasks\Brand\Model\Brand
+     * @throws \Exception
      */
     protected function _initBrand()
     {
-        $brandId = (int)$this->getRequest()->getParam('entity_id');
+        $brandId = $this->getRequest()->getParam('entity_id');
+
         /** @var \Tasks\Brand\Model\Brand $brand */
         $brand = $this->_brandFactory->create();
-        $brand->getCollection()->addAttributeToSelect('*');
-        if ($brandId) {
-            $brand->load($brandId);
+
+        if (is_numeric($brandId) && $brandId > 0) {
+            $brand->load( (int) $brandId);
         }
         $this->_coreRegistry->register('tasks_brand_brand', $brand);
+
         return $brand;
     }
 }
