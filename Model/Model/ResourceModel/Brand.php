@@ -18,8 +18,31 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Tasks_Brand',
-    __DIR__
-);
+namespace Tasks\Brand\Model\ResourceModel;
+
+use Magento\Eav\Model\Entity\AbstractEntity;
+
+/**
+ * Class Brand
+ * @package Tasks\Brand\Model\ResourceModel
+ */
+class Brand extends AbstractEntity
+{
+    protected  function _construct()
+    {
+        $this->_read = 'tasks_brand_read';
+        $this->_write = 'tasks_brand_write';
+    }
+
+    /**
+     * @return \Magento\Eav\Model\Entity\Type
+     */
+    public function getEntityType()
+    {
+        if (empty($this->_type)) {
+            $this->setType(\Tasks\Brand\Model\Brand::ENTITY);
+        }
+
+        return parent::getEntityType();
+    }
+}

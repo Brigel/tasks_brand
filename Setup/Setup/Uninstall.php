@@ -67,8 +67,8 @@ class Uninstall implements \Magento\Framework\Setup\UninstallInterface
         $brandEntityType = \Tasks\Brand\Model\Brand::ENTITY;
         $brandEntityId = $brandSetup->getEntityTypeId($brandEntityType);
 
-        $this->attrCollection->addFieldToFilter(\Magento\Eav\Model\Entity\Attribute\Set::KEY_ENTITY_TYPE_ID, ['eq'=>(int)$brandEntityId]);
-        $this->attrCollection->addFieldToSelect('attribute_id');
+        $this->attrCollection->addFieldToFilter(\Magento\Eav\Model\Entity\Attribute\Set::KEY_ENTITY_TYPE_ID, ['eq'=>$brandEntityId]);
+        $this->attrCollection->addFieldToSelect('id');
 
         $attributes = $this->attrCollection->load()->getItems();
 

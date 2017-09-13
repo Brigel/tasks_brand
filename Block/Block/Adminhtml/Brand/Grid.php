@@ -18,8 +18,13 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Tasks_Brand',
-    __DIR__
-);
+namespace Tasks\Brand\Block\Adminhtml\Brand;
+
+/**
+ * Class Grid
+ * @package Tasks\Brand\Block\Adminhtml\Brand
+ */
+class Grid extends \Magento\Backend\Block\Widget\Grid
+{
+
+}

@@ -18,8 +18,25 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Tasks_Brand',
-    __DIR__
-);
+namespace Tasks\Brand\Block\Adminhtml;
+
+/**
+ * Class Brand
+ * @package Tasks\Brand\Block\Adminhtml
+ */
+class Brand extends \Magento\Backend\Block\Widget\Grid\Container
+{
+    /**
+     * constructor
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_controller = 'adminhtml_brand';
+        $this->_blockGroup = 'Tasks_Brand';
+        $this->_headerText = __('Items');
+        $this->_addButtonLabel = __('Create New Item');
+        parent::_construct();
+    }
+}

@@ -18,8 +18,24 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Tasks_Brand',
-    __DIR__
-);
+namespace Tasks\Brand\Block\Adminhtml\Brand\Edit;
+
+/**
+ * Class Tabs
+ * @package Tasks\Brand\Block\Adminhtml\Brand\Edit
+ */
+class Tabs extends \Magento\Backend\Block\Widget\Tabs
+{
+    /**
+     * constructor
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        parent::_construct();
+        $this->setId('brand_tabs');
+        $this->setDestElementId('edit_form');
+        $this->setTitle(__('Item Information'));
+    }
+}

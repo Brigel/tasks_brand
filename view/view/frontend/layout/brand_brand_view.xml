@@ -1,4 +1,5 @@
-<?php
+<?xml version="1.0"?>
+<!--
 /**
  * Magecom
  *
@@ -16,10 +17,13 @@
  * @package Magecom_Module
  * @copyright Copyright (c) 2017 Magecom, Inc. (http://www.magecom.net)
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- */
-
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Tasks_Brand',
-    __DIR__
-);
+ */-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd"
+      layout="1column">
+    <body>
+        <referenceContainer name="content">
+            <block class="Tasks\Brand\Block\Brand\ListProduct" name="list" template="list.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

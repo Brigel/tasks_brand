@@ -1,4 +1,5 @@
-<?php
+<?xml version="1.0"?>
+<!--
 /**
  * Magecom
  *
@@ -16,10 +17,16 @@
  * @package Magecom_Module
  * @copyright Copyright (c) 2017 Magecom, Inc. (http://www.magecom.net)
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
- */
-
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Tasks_Brand',
-    __DIR__
-);
+ */-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <brands>
+            <general>
+                <meta_title>Brands</meta_title>
+                <meta_description>Super brands for you</meta_description>
+                <meta_keywords>brands,brand,all,product</meta_keywords>
+            </general>
+        </brands>
+    </default>
+</config>

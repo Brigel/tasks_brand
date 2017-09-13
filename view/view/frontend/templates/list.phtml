@@ -12,14 +12,28 @@
  * obtain it through the world-wide-web, please send an email
  * to info@magecom.net so we can send you a copy immediately.
  *
- * @category Magecom
- * @package Magecom_Module
+ * @category    Design
+ * @package     Magecom_Package
  * @copyright Copyright (c) 2017 Magecom, Inc. (http://www.magecom.net)
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
+/**
+ * @var \Tasks\Brand\Block\Brand\ListProduct $block
+ */
+$products = $block->getProductsByCurrentBrand();
+?>
+<ul>
+<?php
+/**
+ * @var \Magento\Catalog\Model\Product $product
+ */
+foreach ($products as $product) {
+?>
+<li><a href="/catalog/product/view/id/<?=$product->getId() ?>">
+        <?= $product->getName().$product->getData('sku') ?>
+    </a></li>
+<?php
+}
+?>
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Tasks_Brand',
-    __DIR__
-);
+</ul>
