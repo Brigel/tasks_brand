@@ -2,7 +2,7 @@
     "name": "tasks/module-brand",
     "description": "Tasks Brand module",
     "type": "magento2-module",
-    "version" : "v2.5",
+    "version" : "v2.6",
     "license": "MIT",
     "autoload": {
                 "files": [
