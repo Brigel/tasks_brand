@@ -2,7 +2,7 @@
     "name": "magecom/module-brand",
     "description": "Magecom Brand module",
     "type": "magento2-module",
-    "version" : "v2.6",
+    "version" : "v2.7",
     "license": "MIT",
     "autoload": {
                 "files": [
