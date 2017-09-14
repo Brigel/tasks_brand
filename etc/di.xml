@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-    <virtualType name="TasksBrandGridFilterPool"
+    <virtualType name="MagecomBrandGridFilterPool"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
@@ -10,29 +10,29 @@
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="TasksBrandBrandGridDataProvider"
+    <virtualType name="MagecomBrandBrandGridDataProvider"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments>
-            <argument name="collection" xsi:type="object" shared="false">Tasks\Brand\Model\ResourceModel\Brand\Collection</argument>
-            <argument name="filterPool" xsi:type="object" shared="false">TasksBrandGridFilterPool</argument>
+            <argument name="collection" xsi:type="object" shared="false">Magecom\Brand\Model\ResourceModel\Brand\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">MagecomBrandGridFilterPool</argument>
         </arguments>
     </virtualType>
-    <type name="Tasks\Brand\Model\ResourceModel\Brand\Grid\Collection">
+    <type name="Magecom\Brand\Model\ResourceModel\Brand\Grid\Collection">
         <arguments>
-            <argument name="mainTable" xsi:type="string">tasks_brand_entity</argument>
-            <argument name="eventPrefix" xsi:type="string">tasks_brand_brand_grid_collection</argument>
+            <argument name="mainTable" xsi:type="string">magecom_brand_entity</argument>
+            <argument name="eventPrefix" xsi:type="string">magecom_brand_brand_grid_collection</argument>
             <argument name="eventObject" xsi:type="string">brand_grid_collection</argument>
-            <argument name="resourceModel" xsi:type="string">Tasks\Brand\Model\ResourceModel\Brand</argument>
+            <argument name="resourceModel" xsi:type="string">Magecom\Brand\Model\ResourceModel\Brand</argument>
         </arguments>
     </type>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="tasks_brand_brand_listing_data_source" xsi:type="string">Tasks\Brand\Model\ResourceModel\Brand\Grid\Collection</item>
+                <item name="magecom_brand_brand_listing_data_source" xsi:type="string">Magecom\Brand\Model\ResourceModel\Brand\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
     <type name="Magento\Theme\Block\Html\Topmenu">
-        <plugin name="block-topmenu" type="Tasks\Brand\Plugin\Block\Topmenu" />
+        <plugin name="block-topmenu" type="Magecom\Brand\Plugin\Block\Topmenu" />
     </type>
 </config>

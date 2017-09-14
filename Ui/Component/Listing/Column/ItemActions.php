@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Ui\Component\Listing\Column;
+namespace Magecom\Brand\Ui\Component\Listing\Column;
 
 /**
  * Class ItemActions
- * @package Tasks\Brand\Ui\Component\Listing\Column
+ * @package Magecom\Brand\Ui\Component\Listing\Column
  */
 class ItemActions extends \Magento\Ui\Component\Listing\Columns\Column
 {

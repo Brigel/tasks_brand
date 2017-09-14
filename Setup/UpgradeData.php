@@ -18,7 +18,7 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Setup;
+namespace Magecom\Brand\Setup;
 
 use Magento\Framework\Setup\UpgradeDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -26,7 +26,7 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 
 /**
  * Class UpgradeData
- * @package Tasks\TestEav\Setup
+ * @package Magecom\TestEav\Setup
  */
 class UpgradeData implements UpgradeDataInterface
 {
@@ -39,7 +39,7 @@ class UpgradeData implements UpgradeDataInterface
     private $eavSetupFactory;
 
     /**
-     * @var \Tasks\Brand\Model\BrandFactory
+     * @var \Magecom\Brand\Model\BrandFactory
      */
     protected $brandFactory;
 
@@ -48,7 +48,7 @@ class UpgradeData implements UpgradeDataInterface
      * @param \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
      */
     public function __construct(
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
     ) {
         $this->brandFactory = $brandFactory;
@@ -63,7 +63,7 @@ class UpgradeData implements UpgradeDataInterface
          */
         $this->upgradeSchema($setup);
         if (version_compare($context->getVersion(), '0.0.2', '<')) {
-            /** @var \Tasks\Brand\Model\Brand $brand */
+            /** @var \Magecom\Brand\Model\Brand $brand */
             $brand = $this->brandFactory->create();
             $data = $this->getDefaultData();
 
@@ -88,14 +88,14 @@ class UpgradeData implements UpgradeDataInterface
         $data = [
             [
                 'name' => 'Guchini',
-                'status' => \Tasks\Brand\Model\Config\Status::STATUS_ENABLED,
+                'status' => \Magecom\Brand\Model\Config\Status::STATUS_ENABLED,
                 'description' => 'Super guchini brand!',
                 'logo' => $defaultPicture,
                 'url_key' => 'gucha'
             ],
             [
                 'name' => 'Armanini',
-                'status' => \Tasks\Brand\Model\Config\Status::STATUS_ENABLED,
+                'status' => \Magecom\Brand\Model\Config\Status::STATUS_ENABLED,
                 'description' => 'Super armanini brand!',
                 'logo' => $defaultPicture,
                 'url_key' => 'arma'
@@ -122,13 +122,13 @@ class UpgradeData implements UpgradeDataInterface
                 'type' => 'int',
                 'label' => 'Brand',
                 'input' => 'select',
-                'source' => 'Tasks\Brand\Model\Config\BrandSource',
+                'source' => 'Magecom\Brand\Model\Config\BrandSource',
                 'default' => 1,
             ]
         );
 
         $eavSetup->addAttribute(
-            \Tasks\Brand\Model\Brand::ENTITY,
+            \Magecom\Brand\Model\Brand::ENTITY,
             'meta_title',
             [
                 'type' => 'varchar',
@@ -139,7 +139,7 @@ class UpgradeData implements UpgradeDataInterface
         );
 
         $eavSetup->addAttribute(
-            \Tasks\Brand\Model\Brand::ENTITY,
+            \Magecom\Brand\Model\Brand::ENTITY,
             'meta_keywords',
             [
                 'type' => 'varchar',
@@ -150,7 +150,7 @@ class UpgradeData implements UpgradeDataInterface
         );
 
         $eavSetup->addAttribute(
-            \Tasks\Brand\Model\Brand::ENTITY,
+            \Magecom\Brand\Model\Brand::ENTITY,
             'url_key',
             [
                 'type' => 'varchar',
@@ -163,7 +163,7 @@ class UpgradeData implements UpgradeDataInterface
         );
 
         $eavSetup->addAttribute(
-            \Tasks\Brand\Model\Brand::ENTITY,
+            \Magecom\Brand\Model\Brand::ENTITY,
             'meta_description',
             [
                 'type' => 'varchar',

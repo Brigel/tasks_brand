@@ -18,18 +18,18 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Model\ResourceModel\Brand;
+namespace Magecom\Brand\Model\ResourceModel\Brand;
 
 use Magento\Eav\Model\Entity\Collection\AbstractCollection;
 
 /**
  * Class Collection
- * @package Tasks\Brand\Model\ResourceModel\Brand
+ * @package Magecom\Brand\Model\ResourceModel\Brand
  */
 class Collection extends AbstractCollection
 {
     protected function _construct()
     {
-        $this->_init('Tasks\Brand\Model\Brand', 'Tasks\Brand\Model\ResourceModel\Brand');
+        $this->_init('Magecom\Brand\Model\Brand', 'Magecom\Brand\Model\ResourceModel\Brand');
     }
 }

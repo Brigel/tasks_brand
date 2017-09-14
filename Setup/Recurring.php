@@ -1,5 +1,5 @@
 <?php
-namespace Tasks\Brand\Setup;
+namespace Magecom\Brand\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
@@ -23,17 +23,17 @@ class Recurring implements InstallSchemaInterface {
     private $brandSetupFactory;
 
     /**
-     * @var \Tasks\Brand\Model\BrandFactory
+     * @var \Magecom\Brand\Model\BrandFactory
      */
     protected $brandFactory;
 
     /**
      * Recurring constructor.
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      * @param BrandSetupFactory $brandSetupFactory
      */
     public function __construct(
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         BrandSetupFactory $brandSetupFactory,
         \Magento\Eav\Model\ResourceModel\Entity\Attribute $collection
     )
@@ -57,7 +57,7 @@ class Recurring implements InstallSchemaInterface {
                     'type' => 'int',
                     'label' => 'Brand',
                     'input' => 'select',
-                    'source' => 'Tasks\Brand\Model\Config\BrandSource',
+                    'source' => 'Magecom\Brand\Model\Config\BrandSource',
                     'default' => 1,
                 ]
             );

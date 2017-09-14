@@ -18,16 +18,16 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Block\Brand;
+namespace Magecom\Brand\Block\Brand;
 
 /**
  * Class Grid
- * @package Tasks\Brand\Block\Adminhtml\Brand
+ * @package Magecom\Brand\Block\Adminhtml\Brand
  */
 class ListBrand extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory
+     * @var \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory
      */
     protected $_brandCollection;
 
@@ -39,12 +39,12 @@ class ListBrand extends \Magento\Framework\View\Element\Template
     /**
      * ListBrand constructor.
      * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Tasks\Brand\Model\ResourceModel\Brand\Collection $_brandCollection
+     * @param \Magecom\Brand\Model\ResourceModel\Brand\Collection $_brandCollection
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \Tasks\Brand\Model\ResourceModel\Brand\Collection $_brandCollection,
+        \Magecom\Brand\Model\ResourceModel\Brand\Collection $_brandCollection,
         array $data = []
     ) {
         $this->_brandCollection = $_brandCollection;

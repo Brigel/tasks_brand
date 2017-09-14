@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Block\Adminhtml\Brand\Edit;
+namespace Magecom\Brand\Block\Adminhtml\Brand\Edit;
 
 /**
  * Class Tabs
- * @package Tasks\Brand\Block\Adminhtml\Brand\Edit
+ * @package Magecom\Brand\Block\Adminhtml\Brand\Edit
  */
 class Tabs extends \Magento\Backend\Block\Widget\Tabs
 {

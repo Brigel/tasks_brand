@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Adminhtml\Brand;
+namespace Magecom\Brand\Controller\Adminhtml\Brand;
 
 /**
  * Class MassDelete
- * @package Tasks\Brand\Controller\Adminhtml\Brand
+ * @package Magecom\Brand\Controller\Adminhtml\Brand
  */
 class MassDelete extends \Magento\Backend\App\Action
 {
@@ -36,7 +36,7 @@ class MassDelete extends \Magento\Backend\App\Action
     /**
      * Collection Factory
      *
-     * @var \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory
+     * @var \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory
      */
     protected $_collectionFactory;
 
@@ -44,12 +44,12 @@ class MassDelete extends \Magento\Backend\App\Action
      * constructor
      *
      * @param \Magento\Ui\Component\MassAction\Filter $filter
-     * @param \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
+     * @param \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
      * @param \Magento\Backend\App\Action\Context $context
      */
     public function __construct(
         \Magento\Ui\Component\MassAction\Filter $filter,
-        \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory,
+        \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory,
         \Magento\Backend\App\Action\Context $context
     ) {
         $this->_filter = $filter;
@@ -69,7 +69,7 @@ class MassDelete extends \Magento\Backend\App\Action
 
         $delete = 0;
         foreach ($collection as $brand) {
-            /** @var \Tasks\Brand\Model\Brand $brand */
+            /** @var \Magecom\Brand\Model\Brand $brand */
             $brand->delete();
             $delete++;
         }

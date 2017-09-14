@@ -18,7 +18,7 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Ui\Component;
+namespace Magecom\Brand\Ui\Component;
 
 
 use Magento\Framework\Api\FilterBuilder;
@@ -28,12 +28,12 @@ use Magento\Framework\App\RequestInterface;
 
 /**
  * Class DataProvider
- * @package Tasks\Brand\Ui\Component
+ * @package Magecom\Brand\Ui\Component
  */
 class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider
 {
     /**
-     * @var \Tasks\Brand\Model\ResourceModel\Brand\Collection
+     * @var \Magecom\Brand\Model\ResourceModel\Brand\Collection
      */
     protected $brandCollection;
 
@@ -46,7 +46,7 @@ class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvi
      * @param SearchCriteriaBuilder $searchCriteriaBuilder
      * @param RequestInterface $request
      * @param FilterBuilder $filterBuilder
-     * @param \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
+     * @param \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
      * @param array $meta
      * @param array $data
      */
@@ -58,7 +58,7 @@ class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvi
         SearchCriteriaBuilder $searchCriteriaBuilder,
         RequestInterface $request,
         FilterBuilder $filterBuilder,
-        \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory,
+        \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory,
         array $meta = [],
         array $data = []
     ) {

@@ -23,7 +23,7 @@
       layout="1column">
     <body>
         <referenceContainer name="content">
-            <block class="Tasks\Brand\Block\Brand\ListProduct" name="list" template="list.phtml"/>
+            <block class="Magecom\Brand\Block\Brand\ListProduct" name="list" template="list.phtml"/>
         </referenceContainer>
     </body>
 </page>

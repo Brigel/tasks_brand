@@ -18,13 +18,13 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Brand;
+namespace Magecom\Brand\Controller\Brand;
 
 use Magento\Framework\App\Action\Context;
 
 /**
  * Class Index
- * @package Tasks\Learning\Controller\Front
+ * @package Magecom\Learning\Controller\Front
  */
 class Index extends \Magento\Framework\App\Action\Action
 {

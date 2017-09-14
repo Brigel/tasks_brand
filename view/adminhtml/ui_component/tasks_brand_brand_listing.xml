@@ -22,10 +22,10 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing_data_source</item>
-            <item name="deps" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing_data_source</item>
+            <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing_data_source</item>
+            <item name="deps" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing_data_source</item>
         </item>
-        <item name="spinner" xsi:type="string">tasks_brand_brand_columns</item>
+        <item name="spinner" xsi:type="string">magecom_brand_brand_columns</item>
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
@@ -35,11 +35,11 @@
             </item>
         </item>
     </argument>
-    <dataSource name="tasks_brand_brand_listing_data_source">
+    <dataSource name="magecom_brand_brand_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <!--<argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>-->
-            <argument name="class" xsi:type="string">Tasks\Brand\Ui\Component\DataProvider</argument>
-            <argument name="name" xsi:type="string">tasks_brand_brand_listing_data_source</argument>
+            <argument name="class" xsi:type="string">Magecom\Brand\Ui\Component\DataProvider</argument>
+            <argument name="name" xsi:type="string">magecom_brand_brand_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
             <argument name="requestFieldName" xsi:type="string">entity_id</argument>
             <argument name="data" xsi:type="array">
@@ -68,7 +68,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="storageConfig" xsi:type="array">
-                        <item name="namespace" xsi:type="string">tasks_brand_brand_listing</item>
+                        <item name="namespace" xsi:type="string">magecom_brand_brand_listing</item>
                     </item>
                 </item>
             </argument>
@@ -77,7 +77,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="columnsData" xsi:type="array">
-                        <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns</item>
+                        <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns</item>
                     </item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/columns</item>
                     <item name="displayArea" xsi:type="string">dataGridActions</item>
@@ -87,17 +87,17 @@
         <exportButton name="export_button">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns.ids</item>
                 </item>
             </argument>
         </exportButton>
         <filterSearch name="fulltext">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing_data_source</item>
-                    <item name="chipsProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top.listing_filters_chips</item>
+                    <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing_data_source</item>
+                    <item name="chipsProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top.listing_filters_chips</item>
                     <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top.bookmarks</item>
+                        <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top.bookmarks</item>
                         <item name="namespace" xsi:type="string">current.search</item>
                     </item>
                 </item>
@@ -106,9 +106,9 @@
         <filters name="listing_filters">
             <!--<argument name="data" xsi:type="array">-->
                 <!--<item name="config" xsi:type="array">-->
-                    <!--<item name="columnsProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns</item>-->
+                    <!--<item name="columnsProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns</item>-->
                     <!--<item name="storageConfig" xsi:type="array">-->
-                        <!--<item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top.bookmarks</item>-->
+                        <!--<item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top.bookmarks</item>-->
                         <!--<item name="namespace" xsi:type="string">current.filters</item>-->
                     <!--</item>-->
                     <!--<item name="templates" xsi:type="array">-->
@@ -120,9 +120,9 @@
                         <!--</item>-->
                     <!--</item>-->
                     <!--<item name="childDefaults" xsi:type="array">-->
-                        <!--<item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top.listing_filters</item>-->
+                        <!--<item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top.listing_filters</item>-->
                         <!--<item name="imports" xsi:type="array">-->
-                            <!--<item name="visible" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns.${ $.index }:visible</item>-->
+                            <!--<item name="visible" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns.${ $.index }:visible</item>-->
                         <!--</item>-->
                     <!--</item>-->
                 <!--</item>-->
@@ -134,7 +134,7 @@
         <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns.ids</item>
                     <item name="indexField" xsi:type="string">entity_id</item>
                 </item>
             </argument>
@@ -159,7 +159,7 @@
                         <item name="type" xsi:type="string">edit</item>
                         <item name="label" xsi:type="string" translate="true">Edit</item>
                         <item name="callback" xsi:type="array">
-                            <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns_editor</item>
+                            <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns_editor</item>
                             <item name="target" xsi:type="string">editSelected</item>
                         </item>
                     </item>
@@ -170,23 +170,23 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top.bookmarks</item>
+                        <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top.bookmarks</item>
                         <item name="namespace" xsi:type="string">current.paging</item>
                     </item>
-                    <item name="selectProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns.ids</item>
                 </item>
             </argument>
         </paging>
     </container>
-    <columns name="tasks_brand_brand_columns">
+    <columns name="magecom_brand_brand_columns">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="storageConfig" xsi:type="array">
-                    <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top.bookmarks</item>
+                    <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top.bookmarks</item>
                     <item name="namespace" xsi:type="string">current</item>
                 </item>
                 <item name="editorConfig" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns.ids</item>
+                    <item name="selectProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns.ids</item>
                     <item name="enabled" xsi:type="boolean">true</item>
                     <item name="indexField" xsi:type="string">entity_id</item>
                     <item name="clientConfig" xsi:type="array">
@@ -196,7 +196,7 @@
                 </item>
                 <item name="childDefaults" xsi:type="array">
                     <item name="fieldAction" xsi:type="array">
-                        <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns_editor</item>
+                        <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns_editor</item>
                         <item name="target" xsi:type="string">startEdit</item>
                         <item name="params" xsi:type="array">
                             <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
@@ -204,7 +204,7 @@
                         </item>
                     </item>
                     <item name="storageConfig" xsi:type="array">
-                        <item name="provider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top.bookmarks</item>
+                        <item name="provider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top.bookmarks</item>
                         <item name="root" xsi:type="string">columns.${ $.index }</item>
                         <item name="namespace" xsi:type="string">current.${ $.storageConfig.root}</item>
                     </item>
@@ -243,7 +243,7 @@
                 </item>
             </argument>
         </column>
-        <column name="logo" class="Tasks\Brand\Ui\Component\Listing\Column\Thumbnail">
+        <column name="logo" class="Magecom\Brand\Ui\Component\Listing\Column\Thumbnail">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/thumbnail</item>
@@ -273,7 +273,7 @@
         </column>
         <column name="status">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Tasks\Brand\Model\Config\Status</item>
+                <item name="options" xsi:type="object">Magecom\Brand\Model\Config\Status</item>
                 <item name="config" xsi:type="array">
 
                     <item name="filter" xsi:type="string">select</item>
@@ -309,7 +309,7 @@
                 </item>
             </argument>
         </column>
-        <actionsColumn name="actions" class="Tasks\Brand\Ui\Component\Listing\Column\ItemActions">
+        <actionsColumn name="actions" class="Magecom\Brand\Ui\Component\Listing\Column\ItemActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
@@ -323,8 +323,8 @@
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/grid/sticky/sticky</item>
-                <item name="toolbarProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.listing_top</item>
-                <item name="listingProvider" xsi:type="string">tasks_brand_brand_listing.tasks_brand_brand_listing.tasks_brand_brand_columns</item>
+                <item name="toolbarProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.listing_top</item>
+                <item name="listingProvider" xsi:type="string">magecom_brand_brand_listing.magecom_brand_brand_listing.magecom_brand_brand_columns</item>
             </item>
         </argument>
     </container>

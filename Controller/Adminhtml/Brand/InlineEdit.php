@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Adminhtml\Brand;
+namespace Magecom\Brand\Controller\Adminhtml\Brand;
 
 /**
  * Class InlineEdit
- * @package Tasks\Brand\Controller\Adminhtml\Brand
+ * @package Magecom\Brand\Controller\Adminhtml\Brand
  */
 abstract class InlineEdit extends \Magento\Backend\App\Action
 {
@@ -36,7 +36,7 @@ abstract class InlineEdit extends \Magento\Backend\App\Action
     /**
      * Brand Factory
      *
-     * @var \Tasks\Brand\Model\BrandFactory
+     * @var \Magecom\Brand\Model\BrandFactory
      */
     protected $_brandFactory;
 
@@ -44,12 +44,12 @@ abstract class InlineEdit extends \Magento\Backend\App\Action
      * constructor
      *
      * @param \Magento\Framework\Controller\Result\JsonFactory $jsonFactory
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      * @param \Magento\Backend\App\Action\Context $context
      */
     public function __construct(
         \Magento\Framework\Controller\Result\JsonFactory $jsonFactory,
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         \Magento\Backend\App\Action\Context $context
     ) {
         $this->_jsonFactory = $jsonFactory;
@@ -74,7 +74,7 @@ abstract class InlineEdit extends \Magento\Backend\App\Action
             ]);
         }
         foreach (array_keys($brandItems) as $brandId) {
-            /** @var \Tasks\Brand\Model\Brand $brand */
+            /** @var \Magecom\Brand\Model\Brand $brand */
             $brand = $this->_brandFactory->create()->load($brandId);
             try {
                 $brandData = $brandItems[$brandId];//todo: handle dates
@@ -103,11 +103,11 @@ abstract class InlineEdit extends \Magento\Backend\App\Action
     /**
      * Add Item id to error message
      *
-     * @param \Tasks\Brand\Model\Brand $brand
+     * @param \Magecom\Brand\Model\Brand $brand
      * @param string $errorText
      * @return string
      */
-    protected function getErrorWithbrandId(\Tasks\Brand\Model\Brand $brand, $errorText)
+    protected function getErrorWithbrandId(\Magecom\Brand\Model\Brand $brand, $errorText)
     {
         return '[Item ID: ' . $brand->getId() . '] ' . $errorText;
     }

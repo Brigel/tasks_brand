@@ -28,7 +28,7 @@
             <class>separator-top</class>
             <label>Brands</label>
             <tab>metaconfig</tab>
-            <resource>Tasks_Brand::brand_configuration</resource>
+            <resource>Magecom_Brand::brand_configuration</resource>
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0"
                    showInStore="0">
                 <label>Meta tags configuration</label>

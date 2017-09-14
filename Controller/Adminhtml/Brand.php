@@ -18,18 +18,18 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Adminhtml;
+namespace Magecom\Brand\Controller\Adminhtml;
 
 /**
  * Class Brand
- * @package Tasks\Brand\Controller\Adminhtml
+ * @package Magecom\Brand\Controller\Adminhtml
  */
 abstract class Brand extends \Magento\Backend\App\Action
 {
     /**
      * Brand Factory
      *
-     * @var \Tasks\Brand\Model\BrandFactory
+     * @var \Magecom\Brand\Model\BrandFactory
      */
     protected $_brandFactory;
 
@@ -50,13 +50,13 @@ abstract class Brand extends \Magento\Backend\App\Action
     /**
      * constructor
      *
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      * @param \Magento\Framework\Registry $coreRegistry
      * @param \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory
      * @param \Magento\Backend\App\Action\Context $context
      */
     public function __construct(
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\Action\Context $context
@@ -69,20 +69,20 @@ abstract class Brand extends \Magento\Backend\App\Action
     }
 
     /**
-     * @return \Tasks\Brand\Model\Brand
+     * @return \Magecom\Brand\Model\Brand
      * @throws \Exception
      */
     protected function _initBrand()
     {
         $brandId = $this->getRequest()->getParam('entity_id');
 
-        /** @var \Tasks\Brand\Model\Brand $brand */
+        /** @var \Magecom\Brand\Model\Brand $brand */
         $brand = $this->_brandFactory->create();
 
         if (is_numeric($brandId) && $brandId > 0) {
             $brand->load( (int) $brandId);
         }
-        $this->_coreRegistry->register('tasks_brand_brand', $brand);
+        $this->_coreRegistry->register('magecom_brand_brand', $brand);
 
         return $brand;
     }

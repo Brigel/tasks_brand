@@ -18,13 +18,13 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Adminhtml\Brand;
+namespace Magecom\Brand\Controller\Adminhtml\Brand;
 
 /**
  * Class Edit
- * @package Tasks\Brand\Controller\Adminhtml\Brand
+ * @package Magecom\Brand\Controller\Adminhtml\Brand
  */
-class Edit extends \Tasks\Brand\Controller\Adminhtml\Brand
+class Edit extends \Magecom\Brand\Controller\Adminhtml\Brand
 {
     /**
      * Backend session
@@ -53,7 +53,7 @@ class Edit extends \Tasks\Brand\Controller\Adminhtml\Brand
      * @param \Magento\Backend\Model\Session $backendSession
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
      * @param \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory
      * @param \Magento\Backend\App\Action\Context $context
@@ -62,7 +62,7 @@ class Edit extends \Tasks\Brand\Controller\Adminhtml\Brand
         \Magento\Backend\Model\Session $backendSession,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         \Magento\Framework\Registry $registry,
         \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\Action\Context $context
@@ -80,7 +80,7 @@ class Edit extends \Tasks\Brand\Controller\Adminhtml\Brand
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Tasks_Brand::brand');
+        return $this->_authorization->isAllowed('Magecom_Brand::brand');
     }
 
     /**
@@ -90,11 +90,11 @@ class Edit extends \Tasks\Brand\Controller\Adminhtml\Brand
     {
 
         $id = $this->getRequest()->getParam('entity_id');
-        /** @var \Tasks\Brand\Model\Brand $brand */
+        /** @var \Magecom\Brand\Model\Brand $brand */
         $brand = $this->_initBrand();
         /** @var \Magento\Backend\Model\View\Result\Page|\Magento\Framework\View\Result\Page $resultPage */
         $resultPage = $this->_resultPageFactory->create();
-        $resultPage->setActiveMenu('Tasks_Brand::brand');
+        $resultPage->setActiveMenu('Magecom_Brand::brand');
 
         $resultPage->getConfig()->getTitle()->set(__('Items'));
         if ($id) {
@@ -114,7 +114,7 @@ class Edit extends \Tasks\Brand\Controller\Adminhtml\Brand
         }
         $title = $brand->getId() ? $brand->getName() : __('New Item');
         $resultPage->getConfig()->getTitle()->prepend($title);
-        $data = $this->_backendSession->getData('tasks_brand_brand_data', true);
+        $data = $this->_backendSession->getData('magecom_brand_brand_data', true);
         if (!empty($data)) {
             $brand->setData($data);
         }

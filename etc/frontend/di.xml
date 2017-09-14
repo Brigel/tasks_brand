@@ -23,8 +23,8 @@
     <type name="Magento\Framework\App\RouterList">
         <arguments>
             <argument name="routerList" xsi:type="array">
-                <item name="tasksbrand" xsi:type="array">
-                    <item name="class" xsi:type="string">Tasks\Brand\Controller\Router</item>
+                <item name="magecombrand" xsi:type="array">
+                    <item name="class" xsi:type="string">Magecom\Brand\Controller\Router</item>
                     <item name="disable" xsi:type="boolean">false</item>
                     <item name="sortOrder" xsi:type="string">22</item>
                 </item>

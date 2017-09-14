@@ -18,27 +18,27 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Model\Config;
+namespace Magecom\Brand\Model\Config;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
 /**
  * Class Status
- * @package Tasks\Learning\Model\Config
+ * @package Magecom\Learning\Model\Config
  */
 class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
 {
     /**
-     * @var \Tasks\Brand\Model\ResourceModel\Brand\Collection
+     * @var \Magecom\Brand\Model\ResourceModel\Brand\Collection
      */
     protected $brandCollection;
 
     /**
      * BrandSource constructor.
-     * @param \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
+     * @param \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
      */
     public function __construct(
-        \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
+        \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
     )
     {
         $collection = $collectionFactory->create();

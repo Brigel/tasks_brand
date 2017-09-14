@@ -8,14 +8,14 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add
-                id="Tasks_Brand:brand"
+                id="Magecom_Brand:brand"
                 title="Brands"
                 translate="title"
-                module="Tasks_Brand"
+                module="Magecom_Brand"
                 action="brand/brand/index"
                 sortOrder="25"
-                dependsOnModule="Tasks_Brand"
-                resource="Tasks_Brand::brand"
+                dependsOnModule="Magecom_Brand"
+                resource="Magecom_Brand::brand"
         />
     </menu>
 </config>

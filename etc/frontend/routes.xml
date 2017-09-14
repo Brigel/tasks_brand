@@ -22,7 +22,7 @@
         xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/App/etc/routes.xsd">
     <router id="standard">
         <route id="brand" frontName="brand">
-            <module name="Tasks_Brand"/>
+            <module name="Magecom_Brand"/>
         </route>
     </router>
 </config>

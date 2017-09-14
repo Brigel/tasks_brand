@@ -18,7 +18,7 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Setup;
+namespace Magecom\Brand\Setup;
 
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -37,16 +37,16 @@ class InstallData implements InstallDataInterface
     private $brandSetupFactory;
 
     /**
-     * @var \Tasks\Brand\Model\BrandFactory
+     * @var \Magecom\Brand\Model\BrandFactory
      */
     protected $brandFactory;
 
     /**
      * UpgradeData constructor.
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      */
     public function __construct(
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         BrandSetupFactory $brandSetupFactory
     )
     {
@@ -81,7 +81,7 @@ class InstallData implements InstallDataInterface
      */
     private function installEntities(&$setup)
     {
-        /** @var \Tasks\Brand\Setup\BrandSetup $brandSetup */
+        /** @var \Magecom\Brand\Setup\BrandSetup $brandSetup */
         $brandSetup = $this->brandSetupFactory->create(['setup' => $setup]);
         $brandSetup->installEntities();
     }

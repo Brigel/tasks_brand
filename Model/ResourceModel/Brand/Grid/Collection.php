@@ -18,18 +18,18 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Model\ResourceModel\Brand\Grid;
+namespace Magecom\Brand\Model\ResourceModel\Brand\Grid;
 
-use Tasks\Brand\Model\ResourceModel\Brand\Collection as BrandCollection;
+use Magecom\Brand\Model\ResourceModel\Brand\Collection as BrandCollection;
 use Magento\Framework\Search\AggregationInterface;
 use Magento\Framework\Api\Search\SearchResultInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\Document;
-use Tasks\Brand\Model\ResourceModel\Brand;
+use Magecom\Brand\Model\ResourceModel\Brand;
 use Magento\Framework\Api\SearchCriteriaInterface;
 
 /**
  * Class Collection
- * @package Tasks\Brand\Model\ResourceModel\Brand\Grid
+ * @package Magecom\Brand\Model\ResourceModel\Brand\Grid
  */
 class Collection extends BrandCollection implements SearchResultInterface
 {

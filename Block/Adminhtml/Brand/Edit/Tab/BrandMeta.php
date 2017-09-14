@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Block\Adminhtml\Brand\Edit\Tab;
+namespace Magecom\Brand\Block\Adminhtml\Brand\Edit\Tab;
 
 /**
  * Class Brand
- * @package Tasks\Brand\Block\Adminhtml\Brand\Edit\Tab
+ * @package Magecom\Brand\Block\Adminhtml\Brand\Edit\Tab
  */
 class BrandMeta extends \Magento\Backend\Block\Widget\Form\Generic implements \Magento\Backend\Block\Widget\Tab\TabInterface
 {
@@ -43,7 +43,7 @@ class BrandMeta extends \Magento\Backend\Block\Widget\Form\Generic implements \M
     /**
      * Country options
      *
-     * @var \Tasks\Brand\Model\Config\Status
+     * @var \Magecom\Brand\Model\Config\Status
      */
     protected $_status;
 
@@ -55,7 +55,7 @@ class BrandMeta extends \Magento\Backend\Block\Widget\Form\Generic implements \M
      * @param \Magento\Backend\Block\Template\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\Data\FormFactory $formFactory
-     * @param \Tasks\Brand\Model\Config\Status $status
+     * @param \Magecom\Brand\Model\Config\Status $status
      * @param array $data
      */
     public function __construct(
@@ -64,7 +64,7 @@ class BrandMeta extends \Magento\Backend\Block\Widget\Form\Generic implements \M
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\Data\FormFactory $formFactory,
-        \Tasks\Brand\Model\Config\Status $status,
+        \Magecom\Brand\Model\Config\Status $status,
         array $data = []
     ) {
         $this->_wysiwygConfig = $wysiwygConfig;
@@ -78,8 +78,8 @@ class BrandMeta extends \Magento\Backend\Block\Widget\Form\Generic implements \M
      */
     protected function _prepareForm()
     {
-        /** @var \Tasks\Brand\Model\Brand $item */
-        $item = $this->_coreRegistry->registry('tasks_brand_brand');
+        /** @var \Magecom\Brand\Model\Brand $item */
+        $item = $this->_coreRegistry->registry('magecom_brand_brand');
         /** @var \Magento\Framework\Data\Form $form */
         $form = $this->_formFactory->create();
 
@@ -88,7 +88,7 @@ class BrandMeta extends \Magento\Backend\Block\Widget\Form\Generic implements \M
 
         $this->addMetaDataTab($form, $item->getId());
 
-        $itemData = $this->_session->getData('tasks_brand_brand_data', true);
+        $itemData = $this->_session->getData('magecom_brand_brand_data', true);
         if ($itemData) {
             $item->addData($itemData);
         }

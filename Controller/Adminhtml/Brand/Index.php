@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Adminhtml\Brand;
+namespace Magecom\Brand\Controller\Adminhtml\Brand;
 
 /**
  * Class Index
- * @package Tasks\Brand\Controller\Adminhtml\Brand
+ * @package Magecom\Brand\Controller\Adminhtml\Brand
  */
 class Index extends \Magento\Backend\App\Action
 {
@@ -87,7 +87,7 @@ class Index extends \Magento\Backend\App\Action
     {
         \Magento\Framework\Profiler::start('grid_page_load');
         $resultPage = $this->getResultPage();
-        $resultPage->setActiveMenu('Tasks_Brand::brand');
+        $resultPage->setActiveMenu('Magecom_Brand::brand');
         $resultPage->getConfig()->getTitle()->prepend((__('Items')));
         \Magento\Framework\Profiler::stop('grid_page_load');
         return $this;

@@ -18,7 +18,7 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Setup;
+namespace Magecom\Brand\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -37,7 +37,7 @@ class InstallSchema implements InstallSchemaInterface
     {
         $setup->startSetup();
 
-        $brandEntity = \Tasks\Brand\Model\Brand::ENTITY;
+        $brandEntity = \Magecom\Brand\Model\Brand::ENTITY;
 
         $this->installEntityTable($setup, $brandEntity)
             ->installDateTimeTable($setup, $brandEntity)
@@ -80,7 +80,7 @@ class InstallSchema implements InstallSchemaInterface
                 ['nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT_UPDATE],
                 'Update Time'
             )
-            ->setComment('Tasks_Brand Brand Table');
+            ->setComment('Magecom_Brand Brand Table');
         /**
          * Create table 'brand_entity'
          */

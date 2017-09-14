@@ -18,7 +18,7 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller;
+namespace Magecom\Brand\Controller;
 
 use Magento\Framework\Url;
 
@@ -30,7 +30,7 @@ use Magento\Framework\Url;
 class Router implements \Magento\Framework\App\RouterInterface
 {
     /**
-     * @var \Tasks\Brand\Model\Brand
+     * @var \Magecom\Brand\Model\Brand
      */
     protected $brands;
 
@@ -53,7 +53,7 @@ class Router implements \Magento\Framework\App\RouterInterface
     public function __construct(
         \Magento\Framework\App\ActionFactory $actionFactory,
         \Magento\Framework\App\ResponseInterface $response,
-        \Tasks\Brand\Model\Brand $brands
+        \Magecom\Brand\Model\Brand $brands
     ) {
         $this->brands = $brands;
         $this->actionFactory = $actionFactory;

@@ -18,13 +18,13 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Adminhtml\Brand;
+namespace Magecom\Brand\Controller\Adminhtml\Brand;
 
 /**
  * Class Save
- * @package Tasks\Brand\Controller\Adminhtml\Brand
+ * @package Magecom\Brand\Controller\Adminhtml\Brand
  */
-class Save extends \Tasks\Brand\Controller\Adminhtml\Brand
+class Save extends \Magecom\Brand\Controller\Adminhtml\Brand
 {
     /**
      * Backend session
@@ -37,14 +37,14 @@ class Save extends \Tasks\Brand\Controller\Adminhtml\Brand
      * constructor
      *
      * @param \Magento\Backend\Model\Session $backendSession
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory
      * @param \Magento\Backend\App\Action\Context $context
      */
     public function __construct(
         \Magento\Backend\Model\Session $backendSession,
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         \Magento\Framework\Registry $registry,
         \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\Action\Context $context
@@ -67,7 +67,7 @@ class Save extends \Tasks\Brand\Controller\Adminhtml\Brand
             $brand = $this->_initBrand();
             $brand->setData($data);
             $this->_eventManager->dispatch(
-                'tasks_brand_brand_prepare_save',
+                'magecom_brand_brand_prepare_save',
                 [
                     'brand' => $brand,
                     'request' => $this->getRequest()
@@ -76,7 +76,7 @@ class Save extends \Tasks\Brand\Controller\Adminhtml\Brand
             try {
                 $brand->save();
                 $this->messageManager->addSuccess(__('The Item has been saved.'));
-                $this->_backendSession->setTasksBrandItemData(false);
+                $this->_backendSession->setMagecomBrandItemData(false);
                 if ($this->getRequest()->getParam('back')) {
                     $resultRedirect->setPath(
                         'brand/*/edit',
@@ -88,7 +88,7 @@ class Save extends \Tasks\Brand\Controller\Adminhtml\Brand
                     return $resultRedirect;
                 }
                 $this->_eventManager->dispatch(
-                    'tasks_brand_after_save',
+                    'magecom_brand_after_save',
                     [
                         'brand' => $brand,
                         'request' => $this->getRequest()
@@ -103,7 +103,7 @@ class Save extends \Tasks\Brand\Controller\Adminhtml\Brand
             } catch (\Exception $e) {
                 $this->messageManager->addException($e, __('Something went wrong while saving the Item.'));
             }
-            $this->_getSession()->setTasksBrandItemData($data);
+            $this->_getSession()->setMagecomBrandItemData($data);
             $resultRedirect->setPath(
                 'brand/*/edit',
                 [

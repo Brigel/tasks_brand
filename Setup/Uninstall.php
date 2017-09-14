@@ -1,6 +1,6 @@
 <?php
 
-namespace Tasks\Brand\Setup;
+namespace Magecom\Brand\Setup;
 
 class Uninstall implements \Magento\Framework\Setup\UninstallInterface
 {
@@ -24,17 +24,17 @@ class Uninstall implements \Magento\Framework\Setup\UninstallInterface
     private $brandSetupFactory;
 
     /**
-     * @var \Tasks\Brand\Model\BrandFactory
+     * @var \Magecom\Brand\Model\BrandFactory
      */
     protected $brandFactory;
 
     /**
      * Recurring constructor.
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      * @param BrandSetupFactory $brandSetupFactory
      */
     public function __construct(
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         BrandSetupFactory $brandSetupFactory,
         \Magento\Eav\Model\ResourceModel\Entity\Attribute\CollectionFactory $attrCollectionFactory,
         \Magento\Framework\App\ResourceConnection $resource
@@ -60,11 +60,11 @@ class Uninstall implements \Magento\Framework\Setup\UninstallInterface
         $setup->startSetup();
 
         /**
-         * @var \Tasks\Brand\Setup\BrandSetup $brandSetup
+         * @var \Magecom\Brand\Setup\BrandSetup $brandSetup
          */
         $brandSetup = $this->brandSetupFactory->create();
 
-        $brandEntityType = \Tasks\Brand\Model\Brand::ENTITY;
+        $brandEntityType = \Magecom\Brand\Model\Brand::ENTITY;
         $brandEntityId = $brandSetup->getEntityTypeId($brandEntityType);
 
         $brandSetup->removeEntityType($brandEntityId);

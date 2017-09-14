@@ -18,13 +18,13 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Model\Config;
+namespace Magecom\Brand\Model\Config;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
 /**
  * Class Status
- * @package Tasks\Learning\Model\Config
+ * @package Magecom\Learning\Model\Config
  */
 class Status implements OptionSourceInterface
 {

@@ -18,14 +18,14 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Block\Brand;
+namespace Magecom\Brand\Block\Brand;
 
 //use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Framework\View\Element\Template;
 
 /**
  * Class Grid
- * @package Tasks\Brand\Block\Adminhtml\Brand
+ * @package Magecom\Brand\Block\Adminhtml\Brand
  */
 class ListProduct extends Template
 {
@@ -35,7 +35,7 @@ class ListProduct extends Template
     protected $_productCollection;
 
     /**
-     * @var \Tasks\Brand\Helper\Data
+     * @var \Magecom\Brand\Helper\Data
      */
     protected $_brandConfig;
 
@@ -53,7 +53,7 @@ class ListProduct extends Template
      * ListProduct constructor.
      * @param Template\Context $context
      * @param \Magento\Catalog\Model\ResourceModel\Product\Collection $productCollection
-     * @param \Tasks\Brand\Helper\Data $brandConfig
+     * @param \Magecom\Brand\Helper\Data $brandConfig
      * @param \Magento\Framework\Registry $registry
      * @param \Magento\Framework\View\Page\Config $pageConfig
      * @param array $data
@@ -61,7 +61,7 @@ class ListProduct extends Template
     public function __construct(
         Template\Context $context,
         \Magento\Catalog\Model\ResourceModel\Product\Collection $productCollection,
-        \Tasks\Brand\Helper\Data $brandConfig,
+        \Magecom\Brand\Helper\Data $brandConfig,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\View\Page\Config $pageConfig,
         array $data = [])

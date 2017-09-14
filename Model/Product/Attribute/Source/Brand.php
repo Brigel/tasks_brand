@@ -18,14 +18,14 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Model\Product\Attribute\Source;
+namespace Magecom\Brand\Model\Product\Attribute\Source;
 
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
 use Magento\Framework\Data\OptionSourceInterface;
 
 /**
  * Class Brand
- * @package Tasks\Brand\Model\Product\Attribute\Source
+ * @package Magecom\Brand\Model\Product\Attribute\Source
  */
 class Brand extends AbstractSource implements OptionSourceInterface
 {
@@ -44,19 +44,19 @@ class Brand extends AbstractSource implements OptionSourceInterface
     /**
      * Brand factory
      *
-     * @var \Tasks\Brand\Model\BrandFactory
+     * @var \Magecom\Brand\Model\BrandFactory
      */
     protected $_brandFactory;
 
     /**
      * Construct
      *
-     * @param \Tasks\Brand\Model\BrandFactory $brandFactory
+     * @param \Magecom\Brand\Model\BrandFactory $brandFactory
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Magento\Framework\App\Cache\Type\Config $configCacheType
      */
     public function __construct(
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Framework\App\Cache\Type\Config $configCacheType
     ) {

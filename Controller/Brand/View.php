@@ -18,7 +18,7 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Controller\Brand;
+namespace Magecom\Brand\Controller\Brand;
 
 use Braintree\Exception;
 use Magento\Catalog\Api\CategoryRepositoryInterface;
@@ -29,12 +29,12 @@ use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
  * Class Index
- * @package Tasks\Brand\Controller\Products
+ * @package Magecom\Brand\Controller\Products
  */
 class View extends \Magento\Framework\App\Action\Action
 {
     /**
-     * @var \Tasks\Brand\Helper\Data
+     * @var \Magecom\Brand\Helper\Data
      */
     protected $_brandConfig;
 
@@ -44,7 +44,7 @@ class View extends \Magento\Framework\App\Action\Action
     protected $_coreRegistry;
 
     /**
-     * @var \Tasks\Brand\Model\ResourceModel\Brand\CollectionFactory
+     * @var \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory
      */
     protected $_brandFactory;
 
@@ -52,9 +52,9 @@ class View extends \Magento\Framework\App\Action\Action
     public function __construct(
         Context $context,
         \Magento\Framework\Registry $registry,
-        \Tasks\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\BrandFactory $brandFactory,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \Tasks\Brand\Model\ResourceModel\Brand $bb
+        \Magecom\Brand\Model\ResourceModel\Brand $bb
     ) {
         $this->bb = $bb;
         $this->_brandFactory = $brandFactory;

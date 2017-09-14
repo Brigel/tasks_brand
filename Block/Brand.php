@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Block\Adminhtml;
+namespace Magecom\Brand\Block\Adminhtml;
 
 /**
  * Class Brand
- * @package Tasks\Brand\Block\Adminhtml
+ * @package Magecom\Brand\Block\Adminhtml
  */
 class Brand extends \Magento\Backend\Block\Widget\Grid\Container
 {
@@ -34,7 +34,7 @@ class Brand extends \Magento\Backend\Block\Widget\Grid\Container
     protected function _construct()
     {
         $this->_controller = 'adminhtml_brand';
-        $this->_blockGroup = 'Tasks_Brand';
+        $this->_blockGroup = 'Magecom_Brand';
         $this->_headerText = __('Items');
         $this->_addButtonLabel = __('Create New Item');
         parent::_construct();

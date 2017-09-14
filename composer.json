@@ -1,6 +1,6 @@
 {
-    "name": "tasks/module-brand",
-    "description": "Tasks Brand module",
+    "name": "magecom/module-brand",
+    "description": "Magecom Brand module",
     "type": "magento2-module",
     "version" : "v2.6",
     "license": "MIT",
@@ -9,7 +9,7 @@
                     "registration.php"
                 ],
                 "psr-4": {
-                    "Tasks\\Brand\\": ""
+                    "Magecom\\Brand\\": ""
                 }
             }
 }

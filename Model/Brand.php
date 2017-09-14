@@ -18,44 +18,32 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Model;
+namespace Magecom\Brand\Model;
 
 use Magento\Framework\Model\AbstractModel;
 
 /**
  * Class Brand
- * @package Tasks\Brand\Model
+ * @package Magecom\Brand\Model
  */
 class Brand extends AbstractModel
 {
-    const ENTITY = 'tasks_brand';
+    const ENTITY = 'magecom_brand';
 
     /**
      * @var \Magento\Framework\App\ResourceConnection
      */
     private $resourceConnection;
 
-//    /**
-//     * Brand constructor.
-//     * @param \Magento\Framework\Model\Context $context
-//     * @param \Magento\Framework\Registry $registry
-//     * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
-//     * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
-//     * @param \Magento\Framework\App\ResourceConnection $resourceConnection
-//     * @param array $data
-//     */
-//    public function __construct(
-//        \Magento\Framework\Model\Context $context,
-//        \Magento\Framework\Registry $registry,
-//        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
-//        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
-//        \Magento\Framework\App\ResourceConnection $resourceConnection,
-//        array $data = []
-//    ) {
-//        $this->resourceConnection = $resourceConnection;
-//        parent::__construct($context, $registry, $resource, $resourceCollection, $data);
-//    }
-
+    /**
+     * Brand constructor.
+     * @param \Magento\Framework\Model\Context $context
+     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Framework\App\ResourceConnection $resourceConnection
+     * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
+     * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\Model\Context $context,
         \Magento\Framework\Registry $registry,
@@ -71,7 +59,7 @@ class Brand extends AbstractModel
 
     protected function _construct(
     ) {
-        $this->_init('Tasks\Brand\Model\ResourceModel\Brand');
+        $this->_init('Magecom\Brand\Model\ResourceModel\Brand');
     }
 
     /**

@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Block\Adminhtml\Brand;
+namespace Magecom\Brand\Block\Adminhtml\Brand;
 
 /**
  * Class Edit
- * @package Tasks\Brand\Block\Adminhtml\Brand
+ * @package Magecom\Brand\Block\Adminhtml\Brand
  */
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
 {
@@ -57,7 +57,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     protected function _construct()
     {
         $this->_objectId = 'entity_id';
-        $this->_blockGroup = 'Tasks_Brand';
+        $this->_blockGroup = 'Magecom_Brand';
         $this->_controller = 'adminhtml_brand';
         parent::_construct();
         $this->buttonList->update('save', 'label', __('Save Item'));
@@ -87,8 +87,8 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
      */
     public function getHeaderText()
     {
-        /** @var \Tasks\Brand\Model\Brand $item */
-        $item = $this->_coreRegistry->registry('tasks_brand_brand');
+        /** @var \Magecom\Brand\Model\Brand $item */
+        $item = $this->_coreRegistry->registry('magecom_brand_brand');
         if ($item->getId()) {
             return __("Edit Item '%1'", $this->escapeHtml($item->getName()));
         }

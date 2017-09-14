@@ -18,9 +18,9 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Setup;
+namespace Magecom\Brand\Setup;
 
-use Tasks\Brand\Model\BrandFactory;
+use Magecom\Brand\Model\BrandFactory;
 use Magento\Eav\Model\Entity\Setup\Context;
 use Magento\Eav\Model\ResourceModel\Entity\Attribute\Group\CollectionFactory;
 use Magento\Eav\Setup\EavSetup;
@@ -29,7 +29,7 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 
 /**
  * Class BrandSetup
- * @package Tasks\Brand\Setup
+ * @package Magecom\Brand\Setup
  */
 class BrandSetup extends EavSetup
 {
@@ -42,10 +42,10 @@ class BrandSetup extends EavSetup
      */
     public function getDefaultEntities()
     {
-        $brandEntity = \Tasks\Brand\Model\Brand::ENTITY;
+        $brandEntity = \Magecom\Brand\Model\Brand::ENTITY;
         return [
             $brandEntity => [
-                'entity_model' => 'Tasks\Brand\Model\ResourceModel\Brand',
+                'entity_model' => 'Magecom\Brand\Model\ResourceModel\Brand',
 //                'attribute_model' => 'Magento\Catalog\Model\ResourceModel\Eav\Attribute',
                 'table' => $brandEntity.'_entity',
 //                'entity_attribute_collection' => 'Magento\Eav\Model\ResourceModel\Entity\Attribute\Collection',
@@ -54,7 +54,7 @@ class BrandSetup extends EavSetup
                         'type' => 'static',
                         'label' => 'Status',
                         'input' => 'select',
-                        'source' => 'Tasks\Brand\Model\Config\Status',
+                        'source' => 'Magecom\Brand\Model\Config\Status',
                         'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_WEBSITE,
                     ],
                     'name' => [

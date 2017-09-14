@@ -18,13 +18,13 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Plugin\Block;
+namespace Magecom\Brand\Plugin\Block;
 
 use Magento\Framework\Data\Tree\NodeFactory;
 
 /**
  * Class Topmenu
- * @package Tasks\Brand\Plugin\Block
+ * @package Magecom\Brand\Plugin\Block
  */
 class Topmenu
 {
@@ -72,7 +72,7 @@ class Topmenu
     {
         return [
             'name' => __('Brands'),
-            'id' => 'tasks-brands-brands',
+            'id' => 'magecom-brands-brands',
             'url' => '/brand/brand/index',
             'has_active' => false,
             'is_active' => false

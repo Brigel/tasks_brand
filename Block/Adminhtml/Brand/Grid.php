@@ -18,11 +18,11 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Block\Adminhtml\Brand;
+namespace Magecom\Brand\Block\Adminhtml\Brand;
 
 /**
  * Class Grid
- * @package Tasks\Brand\Block\Adminhtml\Brand
+ * @package Magecom\Brand\Block\Adminhtml\Brand
  */
 class Grid extends \Magento\Backend\Block\Widget\Grid
 {

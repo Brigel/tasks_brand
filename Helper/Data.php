@@ -18,7 +18,7 @@
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
-namespace Tasks\Brand\Helper;
+namespace Magecom\Brand\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Store\Model\StoreManagerInterface;
@@ -28,7 +28,7 @@ use Magento\Store\Model\ScopeInterface;
 
 /**
  * Class Data
- * @package Tasks\Learning\Helper
+ * @package Magecom\Learning\Helper
  */
 class Data extends AbstractHelper
 {
