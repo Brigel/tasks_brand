@@ -48,12 +48,10 @@ class InstallData implements InstallDataInterface
     public function __construct(
         \Magecom\Brand\Model\BrandFactory $brandFactory,
         BrandSetupFactory $brandSetupFactory
-    )
-    {
+    ) {
         $this->brandFactory = $brandFactory;
         $this->brandSetupFactory = $brandSetupFactory;
     }
-
 
 
     /**
@@ -73,7 +71,6 @@ class InstallData implements InstallDataInterface
 
         $setup->endSetup();
     }
-
 
 
     /**

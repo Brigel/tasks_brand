@@ -39,8 +39,7 @@ class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
      */
     public function __construct(
         \Magecom\Brand\Model\ResourceModel\Brand\CollectionFactory $collectionFactory
-    )
-    {
+    ) {
         $collection = $collectionFactory->create();
         $this->brandCollection = $collection;
     }
@@ -97,6 +96,6 @@ class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
      */
     public function getAllOptions()
     {
-       return $this->toOptionArray();
+        return $this->toOptionArray();
     }
 }

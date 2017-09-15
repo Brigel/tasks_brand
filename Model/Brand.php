@@ -54,8 +54,7 @@ class Brand extends AbstractModel
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = []
-    )
-    {
+    ) {
         $this->resourceConnection = $resourceConnection;
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
@@ -63,8 +62,8 @@ class Brand extends AbstractModel
     /**
      * init classes
      */
-    protected function _construct(
-    ) {
+    protected function _construct()
+    {
         $this->_init('Magecom\Brand\Model\ResourceModel\Brand');
     }
 

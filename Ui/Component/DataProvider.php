@@ -62,10 +62,10 @@ class DataProvider extends \Magento\Framework\View\Element\UiComponent\DataProvi
         array $meta = [],
         array $data = []
     ) {
-    $collection = $collectionFactory->create();
-    $collection->addAttributeToSelect('*');
-    $this->brandCollection = $collection;
-    parent::__construct(
+        $collection = $collectionFactory->create();
+        $collection->addAttributeToSelect('*');
+        $this->brandCollection = $collection;
+        parent::__construct(
             $name,
             $primaryFieldName,
             $requestFieldName,

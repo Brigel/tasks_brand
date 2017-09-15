@@ -63,8 +63,8 @@ class ListProduct extends Template
         \Magecom\Brand\Helper\Data $brandConfig,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\View\Page\Config $pageConfig,
-        array $data = [])
-    {
+        array $data = []
+    ) {
         $this->_pageConfig = $pageConfig;
         $this->_brandConfig = $brandConfig;
         $this->_productCollection = $productCollection;
@@ -79,7 +79,7 @@ class ListProduct extends Template
 
         $metaTitle = $brand->getMetaTitle() ?: $this->_brandConfig->getDefaultMetaTitle();
         $metaDescription = $brand->getMetaDescription() ?: $this->_brandConfig->getDefaultMetaDescription();
-        $metaKeywords = $brand->getMetaKeywords() ?: $this->_brandConfig->getDefaultMetaKeywords() ;
+        $metaKeywords = $brand->getMetaKeywords() ?: $this->_brandConfig->getDefaultMetaKeywords();
 
         $this->_pageConfig->getTitle()->set($metaTitle);
         $this->_pageConfig->setKeywords($metaDescription);
@@ -97,7 +97,7 @@ class ListProduct extends Template
     public function getProductsByCurrentBrand()
     {
         $brand = $this->_coreRegistry->registry('current_brand');
-        $this->_productCollection->addFieldToFilter('brand', ['eq'=>$brand->getId()]);
+        $this->_productCollection->addFieldToFilter('brand', ['eq' => $brand->getId()]);
         return $this->_productCollection->getItems();
     }
 

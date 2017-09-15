@@ -69,18 +69,19 @@ class Router implements \Magento\Framework\App\RouterInterface
         if ($request->getModuleName() === 'brand') {
             return;
         }
-        $mainPath =   addcslashes( $request->getDistroBaseUrl(), '/');
+        $mainPath = addcslashes($request->getDistroBaseUrl(), '/');
         $pathToBrand = 'brand\/([^\/]*).html$';
-        $pattern = '/'.$mainPath.$pathToBrand.'/';
+        $pattern = '/' . $mainPath . $pathToBrand . '/';
         $allPath = $request->getUriString();
 
-        if(preg_match($pattern, $allPath)===1){
+        if (preg_match($pattern, $allPath) === 1) {
             $urlKey = $request->getPathInfo();
-            $urlKey = str_replace('/brand/','', $urlKey);
-            $urlKey = str_replace('.html','', $urlKey);
+            $urlKey = str_replace('/brand/', '', $urlKey);
+            $urlKey = str_replace('.html', '', $urlKey);
 
-            if(!empty($urlKey))
-            $brandId = $this->brands->getBrandIdByUrlKey($urlKey);
+            if (!empty($urlKey)) {
+                $brandId = $this->brands->getBrandIdByUrlKey($urlKey);
+            }
 
             $request->setModuleName('brand')
                 ->setControllerName('brand')
@@ -88,8 +89,8 @@ class Router implements \Magento\Framework\App\RouterInterface
                 ->setParam('brand', $brandId);
 
             $request->setAlias(\Magento\Framework\Url::REWRITE_REQUEST_PATH_ALIAS, $urlKey);
-        }else{
-            return ;
+        } else {
+            return;
         }
 
         return $this->actionFactory->create('Magento\Framework\App\Action\Forward');

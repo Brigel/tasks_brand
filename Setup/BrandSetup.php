@@ -47,7 +47,7 @@ class BrandSetup extends EavSetup
             $brandEntity => [
                 'entity_model' => 'Magecom\Brand\Model\ResourceModel\Brand',
 //                'attribute_model' => 'Magento\Catalog\Model\ResourceModel\Eav\Attribute',
-                'table' => $brandEntity.'_entity',
+                'table' => $brandEntity . '_entity',
 //                'entity_attribute_collection' => 'Magento\Eav\Model\ResourceModel\Entity\Attribute\Collection',
                 'attributes' => [
                     'status' => [

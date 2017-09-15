@@ -28,7 +28,8 @@ use Magento\Framework\Setup\ModuleContextInterface;
  * Class Recurring
  * @package Magecom\Brand\Setup
  */
-class Recurring implements InstallSchemaInterface {
+class Recurring implements InstallSchemaInterface
+{
 
     /**
      * Brand setup factory
@@ -51,8 +52,7 @@ class Recurring implements InstallSchemaInterface {
         \Magecom\Brand\Model\BrandFactory $brandFactory,
         BrandSetupFactory $brandSetupFactory,
         \Magento\Eav\Model\ResourceModel\Entity\Attribute $collection
-    )
-    {
+    ) {
         $this->collection = $collection;
         $this->brandFactory = $brandFactory;
         $this->brandSetupFactory = $brandSetupFactory;
@@ -63,12 +63,12 @@ class Recurring implements InstallSchemaInterface {
      * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
      */
-    public function install( SchemaSetupInterface $setup, ModuleContextInterface $context ) {
+    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    {
         $brandSetup = $this->brandSetupFactory->create();
         $attrBrand = $brandSetup->getAttribute(\Magento\Catalog\Model\Product::ENTITY, 'brand');
 
-        if(empty($attrBrand))
-        {
+        if (empty($attrBrand)) {
             $brandSetup->addAttribute(
                 \Magento\Catalog\Model\Product::ENTITY,
                 'brand',

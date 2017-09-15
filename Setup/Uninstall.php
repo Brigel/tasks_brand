@@ -60,8 +60,7 @@ class Uninstall implements \Magento\Framework\Setup\UninstallInterface
         BrandSetupFactory $brandSetupFactory,
         \Magento\Eav\Model\ResourceModel\Entity\Attribute\CollectionFactory $attrCollectionFactory,
         \Magento\Framework\App\ResourceConnection $resource
-    )
-    {
+    ) {
         $this->resource = $resource;
         $this->attrCollection = $attrCollectionFactory->create();
         $this->brandFactory = $brandFactory;
@@ -92,14 +91,14 @@ class Uninstall implements \Magento\Framework\Setup\UninstallInterface
         $brandSetup->removeEntityType($brandEntityId);
 
         $productEntityId = $brandSetup->getEntityTypeId(\Magento\Catalog\Model\Product::ENTITY);
-        $brandSetup->removeAttribute($productEntityId,'brand');
+        $brandSetup->removeAttribute($productEntityId, 'brand');
 
-        $this->resource->getConnection()->dropTable($brandEntityType.'_entity_datetime');
-        $this->resource->getConnection()->dropTable($brandEntityType.'_entity_decimal');
-        $this->resource->getConnection()->dropTable($brandEntityType.'_entity_int');
-        $this->resource->getConnection()->dropTable($brandEntityType.'_entity_text');
-        $this->resource->getConnection()->dropTable($brandEntityType.'_entity_varchar');
-        $this->resource->getConnection()->dropTable($brandEntityType.'_entity');
+        $this->resource->getConnection()->dropTable($brandEntityType . '_entity_datetime');
+        $this->resource->getConnection()->dropTable($brandEntityType . '_entity_decimal');
+        $this->resource->getConnection()->dropTable($brandEntityType . '_entity_int');
+        $this->resource->getConnection()->dropTable($brandEntityType . '_entity_text');
+        $this->resource->getConnection()->dropTable($brandEntityType . '_entity_varchar');
+        $this->resource->getConnection()->dropTable($brandEntityType . '_entity');
 
 
         $setup->endSetup();

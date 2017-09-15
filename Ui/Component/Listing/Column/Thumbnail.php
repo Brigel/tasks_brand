@@ -40,7 +40,7 @@ class Thumbnail extends \Magento\Ui\Component\Listing\Columns\Column
         if (isset($dataSource['data']['items'])) {
             $fieldName = $this->getData('name');
             foreach ($dataSource['data']['items'] as & $item) {
-                $url = isset($item['logo'])?$item['logo']:'';
+                $url = isset($item['logo']) ? $item['logo'] : '';
                 $item[$fieldName . '_src'] = $url;
                 $item[$fieldName . '_alt'] = $item['name'];
                 $item[$fieldName . '_orig_src'] = $url;

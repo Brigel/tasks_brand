@@ -60,8 +60,7 @@ abstract class Brand extends \Magento\Backend\App\Action
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Backend\Model\View\Result\RedirectFactory $resultRedirectFactory,
         \Magento\Backend\App\Action\Context $context
-    )
-    {
+    ) {
         $this->_brandFactory = $brandFactory;
         $this->_coreRegistry = $coreRegistry;
         $this->_resultRedirectFactory = $resultRedirectFactory;
@@ -80,7 +79,7 @@ abstract class Brand extends \Magento\Backend\App\Action
         $brand = $this->_brandFactory->create();
 
         if (is_numeric($brandId) && $brandId > 0) {
-            $brand->load( (int) $brandId);
+            $brand->load((int)$brandId);
         }
         $this->_coreRegistry->register('magecom_brand_brand', $brand);
 
