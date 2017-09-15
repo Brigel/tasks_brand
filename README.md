@@ -35,7 +35,7 @@ Then install module
 In root directory of you project
 $ composer require magecom/module-brand
 ```
-Then when install succes need upgrade data
+Then after the successful installation, you need to update the data
 ```
 In root directory of you project
 $ php bin/magento setup:upgrade
@@ -44,15 +44,15 @@ Installation completed
 
 Usage
 -----
-* If you wont manage brands, can click on BRANDS in admin menu.
-* Seen brands you can on front after click on brands menu
+* If you want manage brands, can click on BRANDS in admin menu.
+* See the brands you can on front after click on brands menu
 * Brands support url rewrites by url key field and you can specify the meta: title, keywords and description 
-* In product on main edit tab add select field brand. 
+* In product edit on main tab add select field brand. 
 
 
 Uninstall
 ---------
-If you wont uninstall you can write in console
+If you want to uninstall you can write in console
 ```
 In root directory of you project
 $ php bin/magento module:uninstall Magecom_Brand
