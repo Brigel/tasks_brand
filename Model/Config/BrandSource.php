@@ -52,6 +52,7 @@ class BrandSource extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSou
      */
     public function getOptionArray()
     {
+        $this->brandCollection->addAttributeToSelect('*');
         $items = $this->brandCollection->exportToArray();
         $result = [];
         foreach ($items as $item) {
