@@ -28,6 +28,9 @@ use Magento\Eav\Model\Entity\AbstractEntity;
  */
 class Brand extends AbstractEntity
 {
+    /**
+     * Init read and write params
+     */
     protected  function _construct()
     {
         $this->_read = 'magecom_brand_read';

@@ -20,7 +20,6 @@
 
 namespace Magecom\Brand\Block\Brand;
 
-//use Magento\Catalog\Api\CategoryRepositoryInterface;
 use Magento\Framework\View\Element\Template;
 
 /**

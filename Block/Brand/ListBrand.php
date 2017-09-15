@@ -51,7 +51,9 @@ class ListBrand extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 
-
+    /**
+     * @return \Magento\Framework\DataObject[]
+     */
     public function getBrands()
     {
         if (!$this->_brands) {

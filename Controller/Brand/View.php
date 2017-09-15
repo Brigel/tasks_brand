@@ -74,6 +74,10 @@ class View extends \Magento\Framework\App\Action\Action
 
     }
 
+    /**
+     * Add brand in registry
+     * @throws \Exception
+     */
     protected function _initBrand()
     {
         $brandId = $this->_request->getParam('brand');

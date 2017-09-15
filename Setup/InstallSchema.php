@@ -49,6 +49,11 @@ class InstallSchema implements InstallSchemaInterface
         $setup->endSetup();
     }
 
+    /**
+     * @param $setup
+     * @param $brandEntity
+     * @return $this
+     */
     protected function installEntityTable(&$setup, $brandEntity)
     {
         $table = $setup->getConnection()
@@ -90,6 +95,11 @@ class InstallSchema implements InstallSchemaInterface
         return $this;
     }
 
+    /**
+     * @param $setup
+     * @param $brandEntity
+     * @return $this
+     */
     protected function installDateTimeTable(&$setup, $brandEntity)
     {
         $table = $setup->getConnection()
@@ -188,6 +198,11 @@ class InstallSchema implements InstallSchemaInterface
         return $this;
     }
 
+    /**
+     * @param $setup
+     * @param $brandEntity
+     * @return $this
+     */
     protected function installDecimalTable(&$setup, $brandEntity)
     {
         $table = $setup->getConnection()
@@ -282,6 +297,11 @@ class InstallSchema implements InstallSchemaInterface
         return $this;
     }
 
+    /**
+     * @param $setup
+     * @param $brandEntity
+     * @return $this
+     */
     protected function installIntTable(&$setup, $brandEntity)
     {
         $table = $setup->getConnection()
@@ -365,6 +385,11 @@ class InstallSchema implements InstallSchemaInterface
         return $this;
     }
 
+    /**
+     * @param $setup
+     * @param $brandEntity
+     * @return $this
+     */
     protected function installTextTable(&$setup, $brandEntity)
     {
         $table = $setup->getConnection()
@@ -459,6 +484,11 @@ class InstallSchema implements InstallSchemaInterface
         return $this;
     }
 
+    /**
+     * @param $setup
+     * @param $brandEntity
+     * @return $this
+     */
     protected function installVarcharTable(&$setup, $brandEntity)
     {
         $table = $setup->getConnection()

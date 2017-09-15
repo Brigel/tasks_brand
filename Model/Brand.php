@@ -28,6 +28,9 @@ use Magento\Framework\Model\AbstractModel;
  */
 class Brand extends AbstractModel
 {
+    /**
+     * Entity name
+     */
     const ENTITY = 'magecom_brand';
 
     /**
@@ -57,6 +60,9 @@ class Brand extends AbstractModel
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
 
+    /**
+     * init classes
+     */
     protected function _construct(
     ) {
         $this->_init('Magecom\Brand\Model\ResourceModel\Brand');
