@@ -56,7 +56,7 @@ class Uninstall implements \Magento\Framework\Setup\UninstallInterface
      * @param BrandSetupFactory $brandSetupFactory
      */
     public function __construct(
-        \Magecom\Brand\Model\BrandFactory $brandFactory,
+        \Magecom\Brand\Model\Brand $brandFactory,
         BrandSetupFactory $brandSetupFactory,
         \Magento\Eav\Model\ResourceModel\Entity\Attribute\CollectionFactory $attrCollectionFactory,
         \Magento\Framework\App\ResourceConnection $resource

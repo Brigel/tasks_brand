@@ -181,7 +181,6 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
                 'name' => 'logo',
                 'label' => __('Url picture'),
                 'title' => __('Url picture'),
-                'config' => $this->_wysiwygConfig->getConfig()
             ]
         );
 

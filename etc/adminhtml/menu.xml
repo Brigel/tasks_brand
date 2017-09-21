@@ -18,7 +18,8 @@
  * @copyright Copyright (c) 2017 Magecom, Inc. (http://www.magecom.net)
  * @license  http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */-->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add
                 id="Magecom_Brand:brand"
@@ -29,6 +30,16 @@
                 sortOrder="25"
                 dependsOnModule="Magecom_Brand"
                 resource="Magecom_Brand::brand"
+        />
+        <add
+                id="Magecom_Brand::catalog_attributes_attributes"
+                title="Brand"
+                translate="title"
+                module="Magecom_Brand"
+                sortOrder="30"
+                parent="Magento_Backend::stores_attributes"
+                action="catalog/product_attribute/"
+                resource="Magecom_Brand::attributes_attributes"
         />
     </menu>
 </config>
