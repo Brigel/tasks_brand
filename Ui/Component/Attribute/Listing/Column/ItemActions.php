@@ -79,7 +79,7 @@ class ItemActions extends \Magento\Ui\Component\Listing\Columns\Column
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as & $item) {
                 if (isset($item['attribute_id'])) {
-                    $item[$this->getData('attribute_code')] = [
+                    $item[$this->getData('name')] = [
                         'edit' => [
                             'href' => $this->_urlBuilder->getUrl(
                                 static::URL_PATH_EDIT,

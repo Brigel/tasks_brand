@@ -11,7 +11,7 @@
             <block class="Magecom\Brand\Block\Adminhtml\Brand\Attribute\Edit\Tabs" name="attribute_edit_tabs">
                 <container label="Main" name="main">
                     <block class="Magecom\Brand\Block\Adminhtml\Brand\Attribute\Edit\Tab\Main" as="base"/>
-                    <block class="Magento\Eav\Block\Adminhtml\Attribute\Edit\Options\Options" as="advanced"/>
+                    <block class="Magecom\Brand\Block\Adminhtml\Attribute\Edit\Options\Options" as="advanced"/>
                 </container>
             </block>
         </referenceContainer>
@@ -21,5 +21,10 @@
         <referenceContainer name="js">
             <block class="Magento\Backend\Block\Template" name="attribute_edit_js" template="Magecom_Brand::brand/brand/attribute/js.phtml"/>
         </referenceContainer>
+        <referenceBlock name="attribute_edit_js">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Swatches::catalog/product/attribute/js.phtml</argument>
+            </action>
+        </referenceBlock>
     </body>
 </page>

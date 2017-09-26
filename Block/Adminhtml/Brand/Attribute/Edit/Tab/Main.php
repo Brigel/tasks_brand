@@ -59,8 +59,6 @@ class Main extends AbstractMain
         }
         $this->_coreRegistry->register('attribute_type_hidden_fields', $_hiddenFields);
 
-        $frontendInputElm->setValues($frontendInputElm->getValues());
-
         $this->_eventManager->dispatch('brand_attribute_form_build_main_tab', ['form' => $form]);
 
         return $this;

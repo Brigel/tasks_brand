@@ -125,6 +125,7 @@ $stores = $block->getStoresSortedBySortOrder();
                     "attributesData": <?php /* @noEscape */ echo json_encode($values, JSON_HEX_QUOT); ?>,
                     "isSortable":  <?php echo (int)(!$block->getReadOnly() && !$block->canManageOptionDefaultOnly()) ?>,
                     "isReadOnly": <?php echo (int)$block->getReadOnly(); ?>
+
                 },
                 "Magento_Catalog/catalog/product/attribute/unique-validate": {
                     "element": "required-dropdown-attribute-unique",
