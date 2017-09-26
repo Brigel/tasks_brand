@@ -16,4 +16,8 @@ namespace Magecom\Brand\Block\Adminhtml\Brand\Attribute\Edit\Tab;
 
 class Options extends \Magento\Eav\Block\Adminhtml\Attribute\Edit\Options\AbstractOptions
 {
+    public function __construct(Context $context, array $data = [])
+    {
+        parent::__construct($context, $data);
+    }
 }
