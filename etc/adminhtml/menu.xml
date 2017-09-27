@@ -38,7 +38,7 @@
                 module="Magecom_Brand"
                 sortOrder="30"
                 parent="Magento_Backend::stores_attributes"
-                action="catalog/product_attribute/"
+                action="brand/attribute/"
                 resource="Magecom_Brand::attributes_attributes"
         />
     </menu>

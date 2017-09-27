@@ -73,6 +73,10 @@ class Status implements OptionSourceInterface
         return $result;
     }
 
+    public function getAllOptions(){
+        return $this->toOptionArray();
+    }
+
     /**
      * Retrieve option text by option value
      *
@@ -84,5 +88,9 @@ class Status implements OptionSourceInterface
         $options = self::getOptionArray();
 
         return isset($options[$optionId]) ? $options[$optionId] : null;
+    }
+
+    public function setAttribute($_this){
+        return $this;
     }
 }

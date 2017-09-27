@@ -30,7 +30,10 @@ class Attribute extends \Magento\Framework\Url\Helper\Data
          * @todo specify there all relations for properties depending on input type
          */
         $inputTypes = [
-            'multiselect' => ['backend_model' => 'Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend'],
+            'multiselect' => [
+                'source_model'=>'Magento\Eav\Model\Entity\Attribute\Source\Table',
+                'backend_model' => 'Magento\Eav\Model\Entity\Attribute\Backend\ArrayBackend'
+            ],
             'boolean' => ['source_model' => 'Magento\Eav\Model\Entity\Attribute\Source\Boolean'],
         ];
 

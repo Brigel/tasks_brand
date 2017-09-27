@@ -33,6 +33,10 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
      */
     protected $_wysiwygConfig;
 
+    protected $eavSetup;
+
+    protected $_attributeCollection;
+
     /**
      * Country options
      *
@@ -56,8 +60,12 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         \Magento\Framework\Registry $registry,
         \Magento\Framework\Data\FormFactory $formFactory,
         \Magecom\Brand\Model\Config\Status $status,
+        \Magento\Eav\Model\ResourceModel\Entity\Attribute\Collection $attrResu,
+        \Magento\Eav\Setup\EavSetup $eavSetup,
         array $data = []
     ) {
+        $this->eavSetup = $eavSetup;
+        $this->_attributeCollection = $attrResu;
         $this->_wysiwygConfig = $wysiwygConfig;
         $this->_status = $status;
         parent::__construct($context, $registry, $formFactory, $data);
@@ -68,6 +76,9 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
      */
     protected function _prepareForm()
     {
+
+
+
         /** @var \Magecom\Brand\Model\Brand $item */
         $item = $this->_coreRegistry->registry('magecom_brand_brand');
         /** @var \Magento\Framework\Data\Form $form */
@@ -76,7 +87,9 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         $form->setHtmlIdPrefix('brand_');
         $form->setFieldNameSuffix('brand');
 
-        $this->addGeneralTab($form, $item->getId());
+//        $this->addGeneralTab($form, $item->getId());
+
+        $this->addEavTab($form, $item->getId());
 
         $itemData = $this->_session->getData('magecom_brand_brand_data', true);
         if ($itemData) {
@@ -205,6 +218,72 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
                 'values' => $this->_status->toOptionArray(),
             ]
         );
+    }
+
+    protected function addEavTab(&$form, $itemId)
+    {
+
+        $fieldset = $form->addFieldset(
+            'base_fieldset',
+            [
+                'legend' => __('Item Information'),
+                'class' => 'fieldset-wide'
+            ]
+        );
+
+        if ($itemId) {
+            $fieldset->addField(
+                'entity_id',
+                'hidden',
+                ['name' => 'entity_id']
+            );
+        }
+
+        $entityId = $this->eavSetup->getEntityTypeId(\Magecom\Brand\Model\Brand::ENTITY);
+
+        $this->_attributeCollection->addFieldToFilter("entity_type_id", ["eq"=>$entityId]);
+
+        $items = $this->_attributeCollection->getItems();
+        //$items[165]->getFrontend()->getInputType()
+//        $items[158]->getFrontend();
+//        class_exists($items[158]->getFrontendModel())
+        foreach ($items as $item) {
+
+            $name = $item->getAttributeCode();
+            $type = $this->getAttributeType($item);
+
+            $fieldData = [
+                'name' => $item->getName(),
+                'label' => __($item->getName()),
+                'title' => __($item->getName()),
+                'required' => (bool)$item->getIsRequired(),
+            ];
+
+            if($type=='select'||$type=='multiselect'){
+                if($type=='multiselect'){
+                    $options = $item->getSource()->getAllOptions(false);
+                }else{
+                    $options = $item->getSource()->getAllOptions();
+                }
+                $fieldData['values'] = $options;
+            }
+
+            $fieldset->addField($name, $type, $fieldData);
+        }
+    }
+
+    protected function getAttributeType($item)
+    {
+        if ($item->getFrontendModel() !== null) {
+            if (!class_exists($item->getFrontendModel())) {
+                return'text';
+            }else{
+                return $item->getFrontend()->getInputType();
+            }
+        } else {
+            return $item->getFrontend()->getInputType();
+        }
+        throw new \Exception("Attribute not has frontend input part");
     }
 
 }
