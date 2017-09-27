@@ -76,9 +76,6 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
      */
     protected function _prepareForm()
     {
-
-
-
         /** @var \Magecom\Brand\Model\Brand $item */
         $item = $this->_coreRegistry->registry('magecom_brand_brand');
         /** @var \Magento\Framework\Data\Form $form */
@@ -86,8 +83,6 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
 
         $form->setHtmlIdPrefix('brand_');
         $form->setFieldNameSuffix('brand');
-
-//        $this->addGeneralTab($form, $item->getId());
 
         $this->addEavTab($form, $item->getId());
 
@@ -142,84 +137,6 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         return false;
     }
 
-    /**
-     * @param $form
-     * @param $itemId
-     */
-    protected function addGeneralTab(&$form, $itemId)
-    {
-        $fieldset = $form->addFieldset(
-            'base_fieldset',
-            [
-                'legend' => __('Item Information'),
-                'class' => 'fieldset-wide'
-            ]
-        );
-
-        if ($itemId) {
-            $fieldset->addField(
-                'entity_id',
-                'hidden',
-                ['name' => 'entity_id']
-            );
-        }
-
-        $fieldset->addField(
-            'name',
-            'text',
-            [
-                'name' => 'name',
-                'label' => __('Name'),
-                'title' => __('Name'),
-                'required' => true,
-            ]
-        );
-
-        $fieldset->addField(
-            'url_key',
-            'text',
-            [
-                'name' => 'url_key',
-                'label' => __('Unique URL key'),
-                'title' => __('Unique URL key'),
-                'required' => true,
-                'unique' => true
-            ]
-        );
-
-        $fieldset->addField(
-            'logo',
-            'text',
-            [
-                'name' => 'logo',
-                'label' => __('Url picture'),
-                'title' => __('Url picture'),
-            ]
-        );
-
-        $fieldset->addField(
-            'description',
-            'editor',
-            [
-                'name' => 'description',
-                'label' => __('Item description'),
-                'title' => __('Item description'),
-                'config' => $this->_wysiwygConfig->getConfig()
-            ]
-        );
-
-        $fieldset->addField(
-            'status',
-            'select',
-            [
-                'name' => 'status',
-                'label' => __('Item Content'),
-                'title' => __('Item Content'),
-                'values' => $this->_status->toOptionArray(),
-            ]
-        );
-    }
-
     protected function addEavTab(&$form, $itemId)
     {
 
@@ -244,9 +161,7 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         $this->_attributeCollection->addFieldToFilter("entity_type_id", ["eq"=>$entityId]);
 
         $items = $this->_attributeCollection->getItems();
-        //$items[165]->getFrontend()->getInputType()
-//        $items[158]->getFrontend();
-//        class_exists($items[158]->getFrontendModel())
+
         foreach ($items as $item) {
 
             $name = $item->getAttributeCode();
@@ -266,6 +181,9 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
                     $options = $item->getSource()->getAllOptions();
                 }
                 $fieldData['values'] = $options;
+            }
+            if(!$itemId){
+                $fieldData['value'] = $item->getDefaultValue();
             }
 
             $fieldset->addField($name, $type, $fieldData);
